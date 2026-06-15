@@ -22,7 +22,7 @@ export const SERVICES = [
     slug: "advisory",
     name: "Advisory",
     short:
-      "Strategic positioning, crisis and reputation, brand and content, and operating infrastructure for creators running real businesses.",
+      "We are paid by think tanks, platforms, accelerators, and creators for the way we think about where the attention economy is heading.",
     long:
       "The headline practice. We work with the people building, investing in, and operating inside the attention economy — institutional research bodies, consumer technology platforms, accelerators, and the creators themselves. Positioning a category, sizing where the addressable market is going, responding to institutional and platform pressure, and building the systems that let a small organization behave like a much larger one. Sometimes our client is a creator. Often it is the company, fund, or think tank trying to understand the creator landscape with rigor.",
     practiceAreas: [
@@ -57,7 +57,7 @@ export const SERVICES = [
     slug: "partnerships",
     name: "Brand Partnerships",
     short:
-      "Structured for creators who want their brand business architected. Built for brand teams who want a senior counterpart on the strategy side.",
+      "We architect the brand partnerships our creator clients run, and we architect the campaigns our brand clients build with them. Two sides of one table.",
     long:
       "Brand Partnerships is where strategy meets execution. We architect partnerships in both directions: for creators who want their brand business positioned, structured, and renewed, and for brand teams who want a senior counterpart who can run a campaign from creative through delivery. We are not an introduction service. We design the work and stay on it until it ships.",
     practiceAreas: [
@@ -77,13 +77,30 @@ export const SERVICES = [
         name: "Production & outcomes",
         body: "We oversee creative production end to end and report on outcomes after delivery. The case for the next campaign is built into the close of this one.",
       },
+      {
+        name: "Engagement",
+        body: "Most brand partnerships run on a per-campaign basis with a commission structure tied to deal value, with retainer arrangements for ongoing strategic counsel. Multi-year programs are scoped as a series of campaigns rather than a single contract.",
+      },
+    ],
+    // ICP / buyer-type list rendered as a strip on the Partnerships page.
+    // Brian on 2026-06-15: "we work with everyone from think tanks to
+    // government officials, policymakers, CPG brands, et cetera."
+    icp: [
+      "CPG brands",
+      "Government tourism boards",
+      "Talent agencies",
+      "Consumer technology platforms",
+      "Think tanks and policy organizations",
+      "Sports and lifestyle brands",
+      "International brands across Italy, France, Spain, and Korea",
+      "Fortune 100 marketing teams",
     ],
   },
   {
     slug: "investing",
     name: "Investing",
     short:
-      "Three modes. We angel invest. We open the door to larger capital. And sometimes we build the company ourselves.",
+      "We write small angel checks. We open the door to larger capital. And on occasion, we build the company ourselves.",
     long:
       "Investing is the smallest of the three by dollars and the most aligned by incentive. We work in three modes, depending on what the situation actually needs. Sometimes a small angel check from us is the right answer. Sometimes the right answer is for us to make introductions to the larger pools of capital where we have relationships. And sometimes the right answer is for us to incubate the company ourselves.",
     practiceAreas: [
@@ -305,13 +322,25 @@ export const SITE = {
   email: "hello@flavorthing.com",
 } as const;
 
-// Social placeholders per Brian 2026-06-15. Real handles to follow.
-// Note: Brian directed adding the Beehiiv newsletter link to the footer even
-// though the FT Beehiiv task was killed earlier on 2026-05-27 — the footer slot
-// is reserved so the link can drop in when a newsletter platform is chosen.
+// Social rails. Updated 2026-06-15 PM:
+// - Icons in the footer rather than text labels.
+// - Newsletter platform pivoted from Beehiiv to Substack per Brian; the slot
+//   points at Brian's personal Substack since he is becoming the face of the
+//   firm and his writing is the public surface.
+// - URLs are placeholders pending confirmation of the actual handles.
 export const SOCIALS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/flavorthing" },
-  { label: "Instagram", href: "https://www.instagram.com/flavorthing" },
-  { label: "Twitter", href: "https://twitter.com/flavorthing" },
-  { label: "Newsletter", href: "https://flavorthing.beehiiv.com" },
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/flavorthing" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/flavorthing" },
+  { id: "x", label: "X", href: "https://x.com/flavorthing" },
+  { id: "substack", label: "Substack", href: "https://brianlee.substack.com" },
 ] as const;
+
+// Brian's writing surface. Substack. Featured on the homepage and About page
+// because Brian is positioning as the public face of the firm.
+export const BRIAN_WRITING = {
+  url: "https://brianlee.substack.com",
+  headline: "What Brian is writing.",
+  body:
+    "Brian publishes weekly on the operating side of the attention economy. Frameworks, market reads, and the build-in-public notes from running Flavor Thing. Subscribe to read it as it ships.",
+  cta: "Read on Substack",
+} as const;

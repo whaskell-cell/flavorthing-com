@@ -1,11 +1,19 @@
 import Link from "next/link";
 import { NAV, SITE, SOCIALS } from "@/lib/data";
+import {
+  LinkedInIcon,
+  InstagramIcon,
+  XIcon,
+  SubstackIcon,
+} from "@/components/SocialIcons";
 
-// Per Brian 2026-06-15:
-// - Drop the REF / 501(c)(3) line (REF is not a subsidiary of Flavor Thing).
-// - Drop the "advisory company for the creator economy" tagline (already
-//   carried by the hero; footer should not repeat positioning).
-// - Add social placeholders for LinkedIn, Instagram, Twitter, Newsletter.
+const ICONS = {
+  linkedin: LinkedInIcon,
+  instagram: InstagramIcon,
+  x: XIcon,
+  substack: SubstackIcon,
+} as const;
+
 export default function Footer() {
   return (
     <footer className="mt-32 border-t border-neutral-200 bg-neutral-50">
@@ -36,22 +44,29 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        <nav className="flex flex-col gap-3 text-sm text-neutral-700">
+        <div className="flex flex-col gap-4">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
             Follow
           </div>
-          {SOCIALS.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              className="transition-colors hover:text-neutral-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {s.label}
-            </a>
-          ))}
-        </nav>
+          <div className="flex items-center gap-4">
+            {SOCIALS.map((s) => {
+              const Icon = ICONS[s.id as keyof typeof ICONS];
+              return (
+                <a
+                  key={s.id}
+                  href={s.href}
+                  aria-label={s.label}
+                  title={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 transition hover:text-neutral-900"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              );
+            })}
+          </div>
+        </div>
         <div className="flex flex-col gap-3 text-sm text-neutral-500">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
             Legal

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HomeSections from "@/components/HomeSections";
 import HeroKinetic from "@/components/HeroKinetic";
+import BrianWritingSection from "@/components/BrianWritingSection";
 
 // Production home — Variant D locked 2026-06-15.
 // Kinetic typography manifesto as the hero. No image, no lead paragraph.
@@ -29,6 +30,7 @@ export default function Home() {
       </section>
 
       <HomeSections />
+      <BrianWritingSection />
     </>
   );
 }

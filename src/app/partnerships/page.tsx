@@ -8,6 +8,11 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 
 const SERVICE = SERVICES.find((s) => s.slug === "partnerships")!;
 
+// Pillars 0..1 surface as the dual audience above; 2..4 surface as the
+// "How we run a partnership" section below (Deal architecture / Production &
+// outcomes / Engagement).
+const HOW_PILLARS = SERVICE.practiceAreas.slice(2);
+
 export default function PartnershipsPage() {
   return (
     <>
@@ -26,7 +31,7 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* Two-audience split — pro-agency register. */}
+      {/* Two-audience split. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-2">
@@ -77,8 +82,36 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* Logo wall. */}
+      {/* ICP strip — who we work with, signaled by buyer type. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="mb-12 flex items-end justify-between">
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              Who we work with
+            </h2>
+            <span className="hidden text-xs uppercase tracking-widest text-neutral-500 md:block">
+              Buyer profile
+            </span>
+          </div>
+          <p className="max-w-2xl text-neutral-700 md:text-lg md:leading-relaxed">
+            Our brand partnership work spans the buyer profiles most agencies
+            do not serve in the same room.
+          </p>
+          <ul className="mt-10 flex flex-wrap gap-3">
+            {SERVICE.icp?.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-800"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Logo wall. */}
+      <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="mb-12 flex items-end justify-between">
             <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
@@ -107,56 +140,49 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* Selected case studies — Smooth-style brand x creator x outcome. */}
+      {/* Selected case studies — snippet style, no long body copy. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="mb-12">
             <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-              Selected case studies
+              Selected campaigns
             </h2>
             <p className="mt-4 max-w-2xl text-neutral-600">
-              A representative slice of the brand partnerships we have run.
+              Snippets from work we have run.
             </p>
           </div>
-          <ul className="space-y-12">
+          <ul className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {CASE_STUDIES.map((c) => (
-              <li
-                key={c.brand}
-                className="grid gap-8 border-t border-neutral-200 pt-10 md:grid-cols-[260px_1fr] md:gap-12"
-              >
+              <li key={c.brand} className="flex flex-col">
                 <PlaceholderImage
                   label={`${c.brand} × ${c.creator}`}
-                  variant="square"
+                  variant="carousel"
                 />
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-neutral-500">
-                    {c.accolade}
-                  </div>
-                  <h3 className="mt-3 text-2xl font-semibold tracking-tight text-neutral-900">
-                    {c.brand} × {c.creator}
-                  </h3>
-                  <p className="mt-3 text-lg text-neutral-700 md:leading-relaxed">
-                    {c.headline}
-                  </p>
-                  <p className="mt-5 text-neutral-700">{c.body}</p>
+                <div className="mt-5 text-xs uppercase tracking-widest text-neutral-500">
+                  {c.accolade}
                 </div>
+                <h3 className="mt-2 text-lg font-semibold tracking-tight text-neutral-900">
+                  {c.brand} × {c.creator}
+                </h3>
+                <p className="mt-2 text-sm text-neutral-700">{c.headline}</p>
               </li>
             ))}
           </ul>
           <p className="mt-10 text-xs text-neutral-400">
-            Campaign imagery placeholders. Stills to follow.
+            Campaign stills and motion to follow. We are not posting full
+            videos here.
           </p>
         </div>
       </section>
 
-      {/* How we run a partnership — practice areas 3 and 4. */}
+      {/* How we run a partnership — Deal architecture / Production & outcomes / Engagement. */}
       <section>
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             How we run a partnership
           </h2>
-          <div className="mt-12 grid gap-12 md:grid-cols-2">
-            {SERVICE.practiceAreas.slice(2).map((p) => (
+          <div className="mt-12 grid gap-12 md:grid-cols-3">
+            {HOW_PILLARS.map((p) => (
               <article key={p.name}>
                 <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
                   {p.name}

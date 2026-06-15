@@ -21,6 +21,25 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
+      {/* What this looks like — the four practice pillars (moved up per Brian 2026-06-15). */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+            What this looks like
+          </h2>
+          <div className="mt-12 grid gap-12 md:grid-cols-2">
+            {SERVICE.practiceAreas.map((p) => (
+              <article key={p.name}>
+                <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
+                  {p.name}
+                </h3>
+                <p className="prose-editorial mt-4 text-neutral-700">{p.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Whom we advise — institutional clients + creator partners. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
@@ -108,25 +127,6 @@ export default function AdvisoryPage() {
                 Selected partners. Many engagements are private.
               </p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* What this looks like — the four practice pillars. */}
-      <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-            What this looks like
-          </h2>
-          <div className="mt-12 grid gap-12 md:grid-cols-2">
-            {SERVICE.practiceAreas.map((p) => (
-              <article key={p.name}>
-                <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
-                  {p.name}
-                </h3>
-                <p className="prose-editorial mt-4 text-neutral-700">{p.body}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

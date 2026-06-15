@@ -25,7 +25,7 @@ export default function InvestingPage() {
         </div>
       </section>
 
-      {/* Three modes — angel, intros, incubation. */}
+      {/* Three modes. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
@@ -47,34 +47,7 @@ export default function InvestingPage() {
         </div>
       </section>
 
-      {/* Incubation example — Little Chonk. */}
-      <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <PlaceholderImage
-              label="Little Chonk dog backpack on a Manhattan sidewalk"
-              variant="carousel"
-              className="md:rounded-lg"
-            />
-            <div>
-              <div className="text-xs uppercase tracking-widest text-neutral-500">
-                Incubation case study
-              </div>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-                Little Chonk
-              </h2>
-              <p className="prose-editorial mt-6 text-neutral-700">
-                We saw a gap in how dog owners actually move through cities and
-                built the company that filled it. From concept through
-                go-to-market we brought the operating muscle, the design
-                partners, and the network from day one. Little Chonk is one of
-                two founder-stake companies on our books today.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Portfolio — angel positions. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
@@ -97,6 +70,7 @@ export default function InvestingPage() {
         </div>
       </section>
 
+      {/* Founder stakes. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
@@ -119,6 +93,85 @@ export default function InvestingPage() {
         </div>
       </section>
 
+      {/* Incubation case study — Little Chonk. Sketched-out visual journey,
+          per Brian 2026-06-15. Sits below the three modes / portfolio because
+          incubation is mode 3 and benefits from the build-up. */}
+      <section className="border-b border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
+            Mode 3 — Incubation case study
+          </div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-900 md:text-5xl">
+            Little Chonk: a creator, a dog, and a backpack.
+          </h2>
+          <p className="prose-editorial mt-8 max-w-3xl text-lg text-neutral-700">
+            We took a creator with a real audience around their dog and turned
+            an affinity moment into a real product. This is the build journey
+            from concept sketch to launched company.
+          </p>
+
+          <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+            <figure>
+              <PlaceholderImage
+                label="Early backpack sketches"
+                variant="square"
+              />
+              <figcaption className="mt-3 text-xs uppercase tracking-widest text-neutral-500">
+                Step 1 — Concept
+              </figcaption>
+            </figure>
+            <figure>
+              <PlaceholderImage
+                label="Material and silhouette iterations"
+                variant="square"
+              />
+              <figcaption className="mt-3 text-xs uppercase tracking-widest text-neutral-500">
+                Step 2 — Iterations
+              </figcaption>
+            </figure>
+            <figure>
+              <PlaceholderImage
+                label="Creator and dog hero shot"
+                variant="square"
+              />
+              <figcaption className="mt-3 text-xs uppercase tracking-widest text-neutral-500">
+                Step 3 — Creator
+              </figcaption>
+            </figure>
+            <figure>
+              <PlaceholderImage
+                label="Final product on a Manhattan sidewalk"
+                variant="square"
+              />
+              <figcaption className="mt-3 text-xs uppercase tracking-widest text-neutral-500">
+                Step 4 — Launch
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-16 grid gap-12 md:grid-cols-[1.1fr_1fr] md:gap-16">
+            <PlaceholderImage
+              label="Little Chonk website hero screen"
+              variant="wide"
+            />
+            <div>
+              <h3 className="text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+                From audience to affinity product.
+              </h3>
+              <p className="prose-editorial mt-6 text-neutral-700">
+                We brought the operating muscle, the design partners, and the
+                go-to-market motion from day one. Little Chonk is now one of
+                two founder-stake companies on our books.
+              </p>
+            </div>
+          </div>
+          <p className="mt-10 text-xs text-neutral-400">
+            Sketch and product imagery placeholder. Real assets to follow.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA. */}
       <section>
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
