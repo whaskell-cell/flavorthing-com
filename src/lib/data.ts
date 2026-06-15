@@ -174,29 +174,25 @@ export const FOUNDERS = [
   },
 ] as const;
 
-// Strategic advisor council. Brian's voice memo named four; placeholders for the
-// ones I couldn't disambiguate ("Julia" and "Sam"). Mickey Meyer and Pocket.Watch
-// are confirmed. Brian to fill in TBD entries.
+// Strategic advisor council. Confirmed by Brian 2026-06-15.
+// Tight triangulation: a long-time media operator (Meyer), the leading
+// kids/family creator-economy executive (Moonves), and a senior creator-
+// platform product leader (Clanon).
 export const ADVISORS = [
   {
     name: "Mickey Meyer",
-    affiliation: "Co-founder, Jash and Group Nine Media",
+    affiliation: "Co-founder, Jash. Former Group Nine Media",
     note: "Long-time collaborator on the operating side of building creator-led media.",
   },
   {
-    name: "Pocket.Watch",
-    affiliation: "Children's media platform",
-    note: "Institutional advisor on the platform and licensing side of creator businesses.",
+    name: "Julia Moonves",
+    affiliation: "SVP, Commercial Revenue, Pocket.Watch",
+    note: "Built Pocket.Watch's brand partnerships and ad sales practice into a category-defining business across Nintendo, Mattel, and Lego.",
   },
   {
-    name: "Julia [TBD]",
-    affiliation: "Strategic advisor",
-    note: "Bio to be confirmed.",
-  },
-  {
-    name: "Sam [TBD]",
-    affiliation: "Strategic advisor",
-    note: "Bio to be confirmed.",
+    name: "Sam Corrao Clanon",
+    affiliation: "Director of Product, Create, LinkedIn",
+    note: "Previously led creator product and content strategy at Snap, TikTok, and Group Nine. The platform-side voice on the council.",
   },
 ] as const;
 
