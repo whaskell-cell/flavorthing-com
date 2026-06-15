@@ -4,6 +4,7 @@ import {
   PARTNERSHIP_RECEIPTS,
   PARTNERSHIP_BRANDS,
 } from "@/lib/data";
+import PlaceholderImage from "@/components/PlaceholderImage";
 
 const SERVICE = SERVICES.find((s) => s.slug === "partnerships")!;
 
@@ -12,19 +13,77 @@ export default function PartnershipsPage() {
     <>
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="text-sm uppercase tracking-widest text-neutral-500">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
             Practice
           </div>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight text-neutral-900 md:text-6xl">
             {SERVICE.name}
           </h1>
-          <p className="prose-editorial mt-8 text-lg text-neutral-700">
+          <p className="mt-10 max-w-3xl text-lg text-neutral-700 md:text-xl md:leading-relaxed">
             {SERVICE.long}
           </p>
         </div>
       </section>
 
-      {/* Logo wall — the receipts before the prose. */}
+      {/* Two-audience split. The reason this page is rebuilt: both sides of the table. */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid gap-12 md:grid-cols-2">
+            <article className="flex flex-col">
+              <PlaceholderImage
+                label="Creator with brand campaign assets"
+                variant="carousel"
+              />
+              <div className="text-xs uppercase tracking-widest text-neutral-500 mt-8">
+                For creators
+              </div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+                Your deals, run by a senior team.
+              </h2>
+              <p className="mt-6 text-neutral-700 md:leading-relaxed">
+                If you are a creator earning real revenue from brand work and
+                want a team to structure, negotiate, produce, and report on
+                your partnerships, we run them end to end. Some of the
+                strongest creators in food, fashion, sport, and culture run
+                their brand business with us.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-10 inline-block text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
+              >
+                Work with us
+              </Link>
+            </article>
+
+            <article className="flex flex-col">
+              <PlaceholderImage
+                label="Brand-side meeting with FT and creator"
+                variant="carousel"
+              />
+              <div className="text-xs uppercase tracking-widest text-neutral-500 mt-8">
+                For brands
+              </div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+                Access to creators who actually move audiences.
+              </h2>
+              <p className="mt-6 text-neutral-700 md:leading-relaxed">
+                If you are a brand or agency looking for a way in to the
+                creators we work with, we design and run the campaign with you
+                from creative through delivery. We do not broker
+                introductions. We build the partnership.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-10 inline-block text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
+              >
+                Build with us
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Logo wall. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-12 flex items-end justify-between">
@@ -72,7 +131,7 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      <section className="border-b border-neutral-200">
+      <section>
         <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             Selected work
@@ -91,24 +150,6 @@ export default function PartnershipsPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-            For brand teams
-          </h2>
-          <p className="prose-editorial mt-6 text-neutral-700">
-            If you are evaluating a creator partnership and want a team that
-            will own the work from strategy through delivery, we should talk.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-block text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
-          >
-            Start a conversation
-          </Link>
         </div>
       </section>
     </>

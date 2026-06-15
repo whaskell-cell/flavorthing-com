@@ -1,10 +1,17 @@
 import Link from "next/link";
-import { ABOUT, FOUNDERS } from "@/lib/data";
+import {
+  ABOUT,
+  FOUNDER_PRINCIPAL,
+  COFOUNDER,
+  ADVISORS,
+  PAST_AFFILIATES,
+} from "@/lib/data";
+import PlaceholderImage from "@/components/PlaceholderImage";
 
 export default function AboutPage() {
   return (
     <>
-      {/* Manifesto hero — leads with "We started Flavor Thing because…" */}
+      {/* Manifesto hero. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
@@ -16,43 +23,139 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin story — 3 paragraphs, restrained measure. */}
+      {/* Founder / origin — first person, Brian-led. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
-              Origin
+              Founder
             </div>
-            <div className="space-y-6 text-neutral-700 md:text-lg md:leading-relaxed">
-              {ABOUT.origin.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+            <div>
+              <div className="grid gap-10 md:grid-cols-[1fr_220px] md:items-start">
+                <div>
+                  <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+                    {FOUNDER_PRINCIPAL.name}
+                  </h2>
+                  <div className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
+                    {FOUNDER_PRINCIPAL.role}
+                  </div>
+                </div>
+                <PlaceholderImage
+                  label="Brian Lee portrait"
+                  variant="person"
+                />
+              </div>
+              <div className="mt-10 space-y-6 text-neutral-700 md:text-lg md:leading-relaxed">
+                {FOUNDER_PRINCIPAL.bio.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Founders — named, bios, no ornament. */}
+      {/* Co-founder — Jaeki. Restrained, deferential to the principal but real. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
-              Founders
+              Co-founder
             </div>
-            <div className="grid gap-12 md:grid-cols-2">
-              {FOUNDERS.map((f) => (
-                <div key={f.name}>
-                  <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
-                    {f.name}
-                  </h3>
-                  <div className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
-                    {f.role}
-                  </div>
-                  <p className="mt-5 text-neutral-700 md:leading-relaxed">
-                    {f.blurb}
-                  </p>
+            <div className="grid gap-10 md:grid-cols-[220px_1fr] md:items-start">
+              <PlaceholderImage
+                label="Jaeki Cho portrait"
+                variant="person"
+              />
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+                  {COFOUNDER.name}
+                </h2>
+                <div className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
+                  {COFOUNDER.role}
                 </div>
-              ))}
+                <p className="mt-6 text-neutral-700 md:text-lg md:leading-relaxed">
+                  {COFOUNDER.bio}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Council of advisors. */}
+      <section className="border-b border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
+            <div className="text-xs uppercase tracking-widest text-neutral-500">
+              Council
+            </div>
+            <div>
+              <p className="text-neutral-700 md:text-lg md:leading-relaxed">
+                The firm runs with the counsel of operators we trust at the
+                strategic level. Each of them has built or scaled in the
+                domains our creator partners are operating in.
+              </p>
+              <ul className="mt-12 grid gap-10 md:grid-cols-2">
+                {ADVISORS.map((a) => (
+                  <li
+                    key={a.name}
+                    className="border-t border-neutral-200 pt-6"
+                  >
+                    <div className="flex items-start gap-4">
+                      <PlaceholderImage
+                        label={a.name}
+                        variant="square"
+                        className="w-16 flex-none"
+                      />
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-tight text-neutral-900">
+                          {a.name}
+                        </h3>
+                        <div className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
+                          {a.affiliation}
+                        </div>
+                        <p className="mt-3 text-sm text-neutral-700">
+                          {a.note}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-10 text-xs text-neutral-400">
+                Portrait imagery to follow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Past affiliates — receipts of Brian's career. */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
+            <div className="text-xs uppercase tracking-widest text-neutral-500">
+              Past affiliates
+            </div>
+            <div>
+              <p className="text-neutral-700 md:text-lg md:leading-relaxed">
+                Creators, companies, and platforms we have worked with
+                materially. Not exhaustive.
+              </p>
+              <ul className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3">
+                {PAST_AFFILIATES.map((p) => (
+                  <li
+                    key={p.name}
+                    className="border-t border-neutral-200 pt-4 text-sm"
+                  >
+                    <div className="font-semibold tracking-tight text-neutral-900">
+                      {p.name}
+                    </div>
+                    <div className="mt-1 text-neutral-500">{p.context}</div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -72,45 +175,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* How we work — the two-founder + AI ops differentiator. */}
-      <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
-            <div className="text-xs uppercase tracking-widest text-neutral-500">
-              How we work
-            </div>
-            <p className="text-neutral-700 md:text-lg md:leading-relaxed">
-              {ABOUT.howWeWork}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Scale. Receipts as a vertical list. Restrained. */}
-      <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
-            <div className="text-xs uppercase tracking-widest text-neutral-500">
-              Today
-            </div>
-            <ul className="space-y-5">
-              {ABOUT.scaleClaims.map((c, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-4 border-t border-neutral-200 pt-5 text-neutral-700 md:text-lg"
-                >
-                  <span className="font-handwriting text-2xl leading-none text-[var(--accent)] md:text-3xl">
-                    /
-                  </span>
-                  <span>{c}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Pull quote — the manifesto reframed. */}
+      {/* Pull quote. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-32 md:py-40">
           <blockquote className="mx-auto max-w-4xl text-center">
@@ -130,9 +195,9 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="text-neutral-700 md:text-lg md:leading-relaxed">
-                If you are a creator running a real business, or a brand looking
-                for a partnership team that does the work all the way through,
-                we should talk.
+                If you are a creator running a real business, or a brand
+                looking for a partnership team that does the work all the way
+                through, we should talk.
               </p>
               <Link
                 href="/contact"

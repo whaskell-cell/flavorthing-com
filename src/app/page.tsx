@@ -1,79 +1,54 @@
 import Link from "next/link";
 import {
-  HERO_REDLINE,
+  NORTH_STAR,
   HERO_LEAD,
   SERVICES,
   PARTNERSHIP_BRANDS,
-  FOUNDERS,
 } from "@/lib/data";
+import PlaceholderImage from "@/components/PlaceholderImage";
 
+// Brian's locked home page flow (2026-06-15 voice memo):
+//   Hero → Selected partners → What we do → Splash carousel
+// Explicitly NO "Who we are" on the home page anymore.
 export default function Home() {
   return (
     <>
-      {/* Hero — redline edit. Enacts the rebrand visually. No wordmark here (header has it). */}
+      {/* Hero — direct positioning, no redline edit. Splashy image to the right. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
-          <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-neutral-900 md:text-6xl lg:text-7xl">
-            {HERO_REDLINE.map((seg, i) => {
-              if (seg.kind === "text") {
-                return (
-                  <span key={i}>
-                    {seg.value}
-                    {i < HERO_REDLINE.length - 1 ? " " : ""}
-                  </span>
-                );
-              }
-              if (seg.kind === "strike") {
-                return (
-                  <span key={i} className="redline-strike">
-                    {seg.value}
-                  </span>
-                );
-              }
-              return (
-                <span key={i} className="redline-insert text-[1.05em]">
-                  {seg.value}
-                </span>
-              );
-            })}
-          </h1>
-          <p className="mt-12 max-w-xl text-base text-neutral-500 md:text-lg">
-            {HERO_LEAD}
-          </p>
-        </div>
-      </section>
-
-      {/* What we do — three practices. The substance lands here, not in the hero. */}
-      <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="mb-12 flex items-end justify-between">
-            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-              What we do
-            </h2>
-            <span className="hidden text-xs uppercase tracking-widest text-neutral-500 md:block">
-              Three practices, one team
-            </span>
-          </div>
-          <div className="grid gap-12 md:grid-cols-3">
-            {SERVICES.map((s) => (
-              <article key={s.slug} className="flex flex-col">
-                <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
-                  {s.name}
-                </h3>
-                <p className="mt-4 text-neutral-700">{s.short}</p>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="grid items-center gap-12 md:grid-cols-[1.05fr_1fr] md:gap-16">
+            <div>
+              <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-6xl">
+                {NORTH_STAR}
+              </h1>
+              <p className="mt-8 max-w-xl text-base text-neutral-600 md:text-lg">
+                {HERO_LEAD}
+              </p>
+              <div className="mt-10 flex gap-6 text-sm">
                 <Link
-                  href={`/${s.slug}`}
-                  className="mt-6 text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-[var(--accent)]"
+                  href="/partnerships"
+                  className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-[var(--accent)]"
                 >
-                  Read more
+                  Our work
                 </Link>
-              </article>
-            ))}
+                <Link
+                  href="/contact"
+                  className="text-neutral-700 underline decoration-transparent underline-offset-4 transition hover:decoration-neutral-300"
+                >
+                  Get in touch
+                </Link>
+              </div>
+            </div>
+            <PlaceholderImage
+              label="Brian and Jaeki on set"
+              variant="square"
+              className="md:rounded-lg"
+            />
           </div>
         </div>
       </section>
 
-      {/* Selected work — brand partnership logo wall. */}
+      {/* Selected partners — wordmark placeholders. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-12 flex items-end justify-between">
@@ -106,31 +81,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Who we are — founders. Restrained. */}
-      <section>
+      {/* What we do — three practices. */}
+      <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-            Who we are
-          </h2>
-          <div className="mt-10 grid gap-12 md:grid-cols-2">
-            {FOUNDERS.map((f) => (
-              <div key={f.name}>
+          <div className="mb-12 flex items-end justify-between">
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              What we do
+            </h2>
+            <span className="hidden text-xs uppercase tracking-widest text-neutral-500 md:block">
+              Three practices, one team
+            </span>
+          </div>
+          <div className="grid gap-12 md:grid-cols-3">
+            {SERVICES.map((s) => (
+              <article key={s.slug} className="flex flex-col">
                 <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
-                  {f.name}
+                  {s.name}
                 </h3>
-                <div className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
-                  {f.role}
-                </div>
-                <p className="mt-4 text-neutral-700">{f.blurb}</p>
-              </div>
+                <p className="mt-4 text-neutral-700">{s.short}</p>
+                <Link
+                  href={`/${s.slug}`}
+                  className="mt-6 text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-[var(--accent)]"
+                >
+                  Read more
+                </Link>
+              </article>
             ))}
           </div>
-          <Link
-            href="/about"
-            className="mt-10 inline-block text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
-          >
-            More about Flavor Thing
-          </Link>
+        </div>
+      </section>
+
+      {/* Splash carousel — placeholder images, the visual closer of the home page. */}
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="mb-10 flex items-end justify-between">
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              The work
+            </h2>
+            <span className="hidden text-xs uppercase tracking-widest text-neutral-500 md:block">
+              Selected campaigns
+            </span>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <PlaceholderImage
+              label="On Running x Jaeki Cho campaign still"
+              variant="carousel"
+            />
+            <PlaceholderImage
+              label="Apple Pay x Jaeki x TBWA"
+              variant="carousel"
+            />
+            <PlaceholderImage
+              label="New York Mets x Jaeki Cho"
+              variant="carousel"
+            />
+          </div>
+          <p className="mt-8 text-xs text-neutral-400">
+            Imagery placeholder. Photography and campaign stills to follow.
+          </p>
         </div>
       </section>
     </>

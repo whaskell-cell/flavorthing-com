@@ -2,19 +2,15 @@
 // Updated by Sheryl (main agent) from .claude/memory/ + Notion.
 // Brian edits in Claude Code; strategic copy shifts come back to the brief.
 
-export const NORTH_STAR = "The advisory company for the creator economy.";
+// Brian's locked positioning (2026-06-15 voice memo).
+// He explicitly shifted from "creator economy" to "creators in the attention economy"
+// — broader frame, sharper claim. Hero now states this directly, no redline edit.
+export const NORTH_STAR =
+  "We are an advisory company for creators in the attention economy.";
 
-// Redline-edit hero: enacts the rebrand visually.
-// Each segment is either kept as-is, marked-out (old positioning), or written-in (new positioning).
-export const HERO_REDLINE = [
-  { kind: "text", value: "We are" },
-  { kind: "strike", value: "an accelerator for content creators scaling their businesses" },
-  { kind: "insert", value: "the advisory company for the creator economy" },
-  { kind: "text", value: "." },
-] as const;
-
-// Restrained lead under the hero. Does NOT preview the practice list below.
-export const HERO_LEAD = "New York. Two founders. Six clients we wish we could name and a few we can.";
+// Tease line under the hero. Restrained. Does NOT preview the practice strip.
+export const HERO_LEAD =
+  "New York. Built by operators who have been on both sides of the deal.";
 
 export const SERVICES = [
   {
@@ -47,36 +43,49 @@ export const SERVICES = [
     slug: "partnerships",
     name: "Brand Partnerships",
     short:
-      "We sit between brands and creators and run the partnership end-to-end. Strategy through execution.",
+      "Two sides of one table. Creators who want their deals run by a senior team, and brands who want a way in to the creators we work with.",
     long:
-      "Brand Partnerships is where strategy meets execution. We sit between brands and creators and run the partnership from identification through delivery: fit, structure, terms, production, outcomes. The deal does not stop at signature; we stay on it until it ships.",
+      "Brand Partnerships works in both directions. Creators come to us because they want their deals structured and run by a team that has been on the other side of the table. Brands come to us because we have direct relationships with creators whose audiences and craft they want to be in business with. We sit between both sides and run the partnership from identification through delivery: fit, structure, terms, production, outcomes.",
     practiceAreas: [
       {
-        name: "Brand strategy and fit",
-        body: "Matching creator and brand to where the work will actually move the needle. We turn down deals when fit is wrong because reputation compounds.",
+        name: "For creators",
+        body: "If you are a creator earning real revenue from brand work and want a senior team to run your partnerships, this is the practice that runs them. We negotiate, structure, produce, and report. Some of the strongest creators in food, fashion, sport, and culture run their brand business with us.",
+      },
+      {
+        name: "For brands",
+        body: "If you are a brand or agency looking for a way in to one of our creator partners, this is the practice that opens the door. We do not broker introductions. We design and run the campaign with you, from creative through delivery.",
       },
       {
         name: "Deal structure and terms",
         body: "Pricing, scope, deliverables, performance terms, exclusivity windows. Structured to grow into multi-year partnerships, not one-off transactions.",
       },
       {
-        name: "Production and delivery",
-        body: "We oversee creative production end-to-end with our creator partners. The work has to be good or the deal does not renew.",
-      },
-      {
-        name: "Outcomes and renewal",
-        body: "Measurement, reporting, and the case for the next campaign. Most of our partnerships are renewals.",
+        name: "Production and outcomes",
+        body: "We oversee creative production end-to-end. Measurement and reporting on the back end. Most of our partnerships are renewals.",
       },
     ],
   },
   {
     slug: "investing",
-    name: "Angel Investing",
+    name: "Investing",
     short:
-      "Selective angel checks into companies we have conviction in. Sometimes equity-for-services.",
+      "Three modes. We angel invest. We open the door to larger capital. And sometimes we build the company ourselves.",
     long:
-      "Angel Investing is the smallest of the three by dollars and the most aligned by incentive. We write small checks into companies we have direct conviction in, and we sometimes structure equity-for-services where our advisory and partnership infrastructure is the value-add. We are not a fund.",
-    practiceAreas: [],
+      "Investing is the smallest of the three by dollars and the most aligned by incentive. We work in three modes, depending on what the situation actually needs. Sometimes a small angel check from us is the right answer. Sometimes the right answer is for us to make introductions to the larger pools of capital where we have relationships. And sometimes the right answer is for us to incubate the company ourselves.",
+    practiceAreas: [
+      {
+        name: "Angel checks",
+        body: "We write small checks into companies we have direct conviction in. The portfolio is meaningful, not enormous. We do this because skin in the game makes us a better advisor.",
+      },
+      {
+        name: "Capital introductions",
+        body: "When the right round is larger than our check size, we open the door. We have relationships across early-stage funds, growth funds, and strategic capital. We do not charge for introductions.",
+      },
+      {
+        name: "Incubation",
+        body: "Occasionally we see a gap in the market that is best filled by building the company ourselves. Little Chonk is one example. Righteous Eats is another. When we incubate, we bring the operating muscle and the network from day one.",
+      },
+    ],
   },
 ] as const;
 
@@ -131,49 +140,92 @@ export const PORTFOLIO_FOUNDER_STAKES = [
   { name: "Little Chonk", note: "Dog backpack" },
 ] as const;
 
+export const FOUNDER_PRINCIPAL = {
+  name: "Brian Lee",
+  role: "Founder",
+  // First-person origin. Names confirmed by Brian voice memo 2026-06-15.
+  // Anderson .Paak / Jonathan Park / Jaeki Cho are the trio he listed; "Rob" was
+  // mentioned and then de-prioritized ("probably not"), so omitted.
+  bio: [
+    "I have been on every side of the creator economy. I started inside operating companies — Broadcom, Knocksteady, Group Nine Media — through several exits. Along the way I have spent the last fifteen years advising creators in the rooms where the real decisions get made.",
+    "I helped Anderson .Paak shape the operating side of his career when he was scaling from Grammy-winning artist into a multi-property creative business. I worked with Jonathan Park on the strategic moves that took his platform from cult to scale. I co-founded Flavor Thing with Jaeki Cho because the two of us saw the same gap from different sides of the same table.",
+    "Flavor Thing is the firm I wished existed every time I sat across from a creator who needed real operating counsel and could not find it anywhere serious.",
+  ],
+} as const;
+
+export const COFOUNDER = {
+  name: "Jaeki Cho",
+  role: "Co-founder",
+  bio: "One of New York's most recognized food and culture creators, with an audience built over a decade as a journalist and on-camera personality. Founder of Righteous Eats and the face of much of the partnership work we run. The customer we serve, on the founding team.",
+} as const;
+
+// Backwards compatibility: keep the FOUNDERS array shape for any callers
+// that still consume it (other pages reference it for the home + practice CTAs).
 export const FOUNDERS = [
   {
-    name: "Brian Lee",
-    role: "Co-founder and President",
-    blurb:
-      "Two decades inside operating companies, including Broadcom, Knocksteady, and Group Nine Media. Long-time advisor to and investor in the creator economy. Built and exited businesses on both sides of the table — the brand side and the talent side.",
+    name: FOUNDER_PRINCIPAL.name,
+    role: FOUNDER_PRINCIPAL.role,
+    blurb: FOUNDER_PRINCIPAL.bio[0],
   },
   {
-    name: "Jaeki Cho",
-    role: "Co-founder",
-    blurb:
-      "One of New York's most recognized food and culture creators, with an audience built over a decade as a journalist and on-camera personality. Founder of Righteous Eats and the face of much of the partnership work we run. The customer we serve, on the founding team.",
+    name: COFOUNDER.name,
+    role: COFOUNDER.role,
+    blurb: COFOUNDER.bio,
   },
 ] as const;
 
-// /about page content. Structured to mirror Smooth Media's About template
-// (manifesto hero, origin, founders, mission, scale, pull quote) so the
-// register reads like a peer, not a smaller version.
+// Strategic advisor council. Brian's voice memo named four; placeholders for the
+// ones I couldn't disambiguate ("Julia" and "Sam"). Mickey Meyer and Pocket.Watch
+// are confirmed. Brian to fill in TBD entries.
+export const ADVISORS = [
+  {
+    name: "Mickey Meyer",
+    affiliation: "Co-founder, Jash and Group Nine Media",
+    note: "Long-time collaborator on the operating side of building creator-led media.",
+  },
+  {
+    name: "Pocket.Watch",
+    affiliation: "Children's media platform",
+    note: "Institutional advisor on the platform and licensing side of creator businesses.",
+  },
+  {
+    name: "Julia [TBD]",
+    affiliation: "Strategic advisor",
+    note: "Bio to be confirmed.",
+  },
+  {
+    name: "Sam [TBD]",
+    affiliation: "Strategic advisor",
+    note: "Bio to be confirmed.",
+  },
+] as const;
+
+// Creators and properties Brian has worked with materially over fifteen years.
+// Restrained list, not exhaustive.
+export const PAST_AFFILIATES = [
+  { name: "Anderson .Paak", context: "Multi-year operating advisory" },
+  { name: "Jonathan Park", context: "Platform strategy and scaling" },
+  { name: "Group Nine Media", context: "Operating role through exit" },
+  { name: "Jash", context: "Co-creator network on the operating side" },
+  { name: "Broadcom", context: "Early operator role" },
+  { name: "Knocksteady", context: "Founding team" },
+] as const;
+
+// /about page is now built around the principal. Mirrors Smooth Media's About
+// template structure (manifesto hero, origin, mission, council, pull quote)
+// but the origin is Brian's first-person story, not a company-voice paragraph.
 export const ABOUT = {
   manifesto:
     "We started Flavor Thing because creators are the next generation of operating businesses, and the firms built to serve them do not yet exist.",
-  origin: [
-    "Brian Lee spent two decades inside operating companies — Broadcom, Knocksteady, Group Nine Media — through several exits and a long run advising and investing in the creator economy from the brand side. Jaeki Cho built an audience over a decade as a journalist and on-camera personality, then quietly turned Righteous Eats into a media property that runs partnerships with the largest brands in the country.",
-    "We met where the operator world and the creator world overlap, looked at the field of firms available to creators running real businesses, and concluded the right one had not been built yet. Talent agencies were good at booking but not at strategy. Strategy consultancies were good at frameworks but not at the cultural register the work requires. Early-stage funds wrote checks but had no operating muscle. The creators who needed all three were stitching together three different vendors who did not coordinate.",
-    "Flavor Thing is the firm we wished existed when we were on the other side of the conversation.",
-  ],
   mission:
-    "Creators today are running real businesses with real revenue, real teams, and real consequences. They have brands. They have audiences. They have decisions to make every week that no MBA-trained consultancy understands and no talent agency is built to handle. We built Flavor Thing for that specific gap: an operating firm that advises the strategy, runs the brand partnerships, and puts capital behind the right bets. From one team.",
-  howWeWork:
-    "We run a two-founder bench amplified by an operating stack that lets us deliver at a level associated with much larger firms. That is how we are able to do McKinsey-quality strategy work, CAA-quality deal making, and a fund-quality capital allocation discipline as a small, deliberate firm. The stack does not show up in the work. The outcomes do.",
-  scaleClaims: [
-    "11 brand partnerships across consumer technology, sports, mobility, and beverage",
-    "17 active angel positions, with founder stakes in Righteous Eats and Little Chonk",
-    "Multi-year partnerships including On Running (4 years and counting), Apple Pay via TBWA, and the New York Mets",
-    "A 501(c)(3) sister organization, Righteous Eats Foundation, that anchors our cause-marketing work",
-  ],
+    "Creators today are running real businesses with real revenue, real teams, and real consequences. They have brands, audiences, and decisions to make every week that no MBA-trained consultancy understands and no talent agency is built to handle. We built Flavor Thing for that specific gap: an operating firm that advises the strategy, runs the brand partnerships, and puts capital behind the right bets. From one team.",
   pullQuote:
     "Creators are the next generation of operating businesses. Flavor Thing is the operating company built for them.",
 } as const;
 
 export const NAV = [
   { href: "/advisory", label: "Advisory" },
-  { href: "/partnerships", label: "Brand Partnerships" },
+  { href: "/partnerships", label: "Partnerships" },
   { href: "/investing", label: "Investing" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
