@@ -1,65 +1,125 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  NORTH_STAR,
+  HERO_SUBHEAD,
+  SERVICES,
+  PARTNERSHIP_RECEIPTS,
+  FOUNDERS,
+} from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-28 md:py-40">
+          <h1 className="font-serif text-5xl text-neutral-900 md:text-7xl">
+            {NORTH_STAR}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="prose-editorial mt-10 max-w-2xl text-lg text-neutral-700 md:text-xl">
+            {HERO_SUBHEAD}
           </p>
+          <div className="mt-12 flex gap-6 text-sm">
+            <Link
+              href="/partnerships"
+              className="border-b border-neutral-900 pb-1 text-neutral-900 transition-colors hover:text-neutral-600"
+            >
+              Our work
+            </Link>
+            <Link
+              href="/contact"
+              className="border-b border-transparent pb-1 text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900"
+            >
+              Get in touch
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Three services */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="mb-12 flex items-end justify-between">
+            <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+              What we do
+            </h2>
+            <span className="hidden text-sm uppercase tracking-widest text-neutral-500 md:block">
+              Three practices, one team
+            </span>
+          </div>
+          <div className="grid gap-12 md:grid-cols-3">
+            {SERVICES.map((s) => (
+              <article key={s.slug} className="flex flex-col">
+                <h3 className="font-serif text-2xl text-neutral-900">{s.name}</h3>
+                <p className="mt-4 text-neutral-700">{s.short}</p>
+                <Link
+                  href={`/${s.slug}`}
+                  className="mt-6 text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+                >
+                  Read more
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Selected work */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+            Selected work
+          </h2>
+          <p className="mt-4 max-w-xl text-neutral-600">
+            A few of the brand partnerships our creator partners and our team
+            have run together.
+          </p>
+          <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 text-sm md:grid-cols-4">
+            {PARTNERSHIP_RECEIPTS.map((r) => (
+              <li
+                key={r.brand}
+                className="border-t border-neutral-200 pt-4 text-neutral-700"
+              >
+                <div className="font-medium text-neutral-900">{r.brand}</div>
+                <div className="mt-1 text-neutral-500">
+                  with {r.creator}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-widest text-neutral-400">
+                  {r.year}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Who we are */}
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+            Who we are
+          </h2>
+          <div className="mt-10 grid gap-12 md:grid-cols-2">
+            {FOUNDERS.map((f) => (
+              <div key={f.name}>
+                <h3 className="font-serif text-2xl text-neutral-900">
+                  {f.name}
+                </h3>
+                <div className="mt-1 text-sm uppercase tracking-widest text-neutral-500">
+                  {f.role}
+                </div>
+                <p className="mt-4 text-neutral-700">{f.blurb}</p>
+              </div>
+            ))}
+          </div>
+          <Link
+            href="/about"
+            className="mt-10 inline-block border-b border-neutral-900 pb-1 text-sm text-neutral-900 hover:text-neutral-600"
+          >
+            More about Flavor Thing
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

@@ -2,25 +2,33 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #18181b;
+  --accent: #1a3a2e; /* deep editorial green — change in one place */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "ss01", "kern";
+}
+
+/* Editorial display headings (serif) get tighter tracking + leading. */
+.font-serif {
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* Quiet readable body. Long-form paragraphs feel like a strategy memo. */
+.prose-editorial p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 38rem;
 }
