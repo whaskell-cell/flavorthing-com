@@ -9,13 +9,10 @@ export default function HomeSections() {
   return (
     <section>
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-12">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             What we do
           </h2>
-          <span className="hidden text-xs uppercase tracking-widest text-neutral-500 md:block">
-            Three practices, one team
-          </span>
         </div>
         <div className="grid gap-12 md:grid-cols-3">
           {SERVICES.map((s) => (

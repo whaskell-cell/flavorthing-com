@@ -14,7 +14,7 @@ const EMPHASIZE: Set<string> = new Set(["strategy", "attention", "economy."]);
 export default function HeroKinetic() {
   const words = NORTH_STAR.split(" ");
   return (
-    <h1 className="max-w-5xl text-4xl font-semibold leading-[1.1] tracking-tight text-neutral-900 md:text-6xl lg:text-7xl">
+    <h1 className="max-w-5xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
       {words.map((w, i) => {
         const lower = w.toLowerCase();
         const emphasize = EMPHASIZE.has(lower);
