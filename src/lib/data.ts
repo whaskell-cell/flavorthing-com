@@ -2,13 +2,16 @@
 // Updated by Sheryl (main agent) from .claude/memory/ + Notion.
 // Brian edits in Claude Code; strategic copy shifts come back to the brief.
 
-// Brian's locked positioning (2026-06-15 voice memo + later swap).
-// Hero noun moved from "advisory company" to "operating firm" so the hero word
-// distinguishes from the "Advisory" practice below, and so register matches
-// McKinsey/Bain/Joele Frank ("firm" not "company"). "Operating" claims execution
-// rather than counsel, which is the actual differentiator vs. Smooth + Reign Maker.
+// Brian's locked positioning (2026-06-15).
+// Sequence: "advisory company" -> "operating firm" -> "strategy firm" (locked).
+// "Strategy firm" sits in the Bain register ("global consultancy / strategy
+// consulting"), is a real industry category (unlike "operating firm" which I
+// had invented from "operating partner"), and distinguishes from the Advisory
+// practice below. Confirms with the buyer profile Brian named on 2026-06-15:
+// institutional clients (Manhattan Institute, Webtoon, 500 Startups) plus
+// creators. The subject matter stays "creators in the attention economy."
 export const NORTH_STAR =
-  "We are an operating firm for creators in the attention economy.";
+  "We are a strategy firm for creators in the attention economy.";
 
 // HERO_LEAD intentionally removed 2026-06-15 per Brian. With Variant D
 // (kinetic typography) the manifesto sentence is the hero; no supporting
@@ -21,7 +24,7 @@ export const SERVICES = [
     short:
       "Strategic positioning, crisis and reputation, brand and content, and operating infrastructure for creators running real businesses.",
     long:
-      "The headline practice. We work alongside creators on the strategic decisions most agencies and managers will not touch. Positioning a creator inside a market, redirecting a career into a larger addressable space, responding to institutional pressure, and building the systems that let a personality scale into a media company.",
+      "The headline practice. We work with the people building, investing in, and operating inside the attention economy — institutional research bodies, consumer technology platforms, accelerators, and the creators themselves. Positioning a category, sizing where the addressable market is going, responding to institutional and platform pressure, and building the systems that let a small organization behave like a much larger one. Sometimes our client is a creator. Often it is the company, fund, or think tank trying to understand the creator landscape with rigor.",
     practiceAreas: [
       {
         name: "Positioning & Category Strategy",
@@ -198,12 +201,14 @@ export const FOUNDER_PRINCIPAL = {
   name: "Brian Lee",
   role: "Founder",
   // First-person origin. Names confirmed by Brian voice memo 2026-06-15.
-  // Anderson .Paak / Jonathan Park / Jaeki Cho are the trio he listed; "Rob" was
-  // mentioned and then de-prioritized ("probably not"), so omitted.
+  // Updated 2026-06-15 PM to surface the institutional buyer profile: Brian's
+  // paying advisory clients include think tanks, consumer tech platforms, and
+  // accelerators in addition to creators. That audience should hear itself
+  // in the bio, not be relegated to "creators only."
   bio: [
-    "I have been on every side of the creator economy. I started inside operating companies — Broadcom, Knocksteady, Group Nine Media — through several exits. Along the way I have spent the last fifteen years advising creators in the rooms where the real decisions get made.",
-    "I helped Anderson .Paak shape the operating side of his career when he was scaling from Grammy-winning artist into a multi-property creative business. I worked with Jonathan Park on the strategic moves that took his platform from cult to scale. I co-founded Flavor Thing with Jaeki Cho because the two of us saw the same gap from different sides of the same table.",
-    "Flavor Thing is the firm I wished existed every time I sat across from a creator who needed real operating counsel and could not find it anywhere serious.",
+    "I have been on every side of the attention economy. I started inside operating companies — Broadcom, Knocksteady, Group Nine Media — through several exits. Today I advise across the full spectrum of the space: institutional clients like the Manhattan Institute, consumer technology platforms like Webtoon, accelerators like 500 Startups, and creators like Anderson .Paak, Jonathan Park, and Jaeki Cho.",
+    "What ties them together is not category. It is that all of them are people who have paid for the way I think about where attention is heading, how creators are building real businesses inside it, and what it takes to operate seriously in that environment.",
+    "I co-founded Flavor Thing with Jaeki Cho because we saw the same gap from different sides of the same table. The firm we wished existed every time we sat across from a creator, a company, or an institution who needed real strategic counsel on this space and could not find it anywhere serious.",
   ],
 } as const;
 
@@ -250,15 +255,28 @@ export const ADVISORS = [
   },
 ] as const;
 
-// Creators and properties Brian has worked with materially over fifteen years.
-// Restrained list, not exhaustive.
+// Creators, companies, and institutions Brian has worked with materially over
+// fifteen years. Restrained list, not exhaustive. Mix of paying advisory
+// clients and operating roles.
 export const PAST_AFFILIATES = [
+  { name: "Manhattan Institute", context: "Strategic advisory — attention economy" },
+  { name: "Webtoon", context: "Strategic advisory — consumer technology" },
+  { name: "500 Startups", context: "Strategic advisory — investor side" },
   { name: "Anderson .Paak", context: "Multi-year operating advisory" },
   { name: "Jonathan Park", context: "Platform strategy and scaling" },
   { name: "Group Nine Media", context: "Operating role through exit" },
   { name: "Jash", context: "Co-creator network on the operating side" },
   { name: "Broadcom", context: "Early operator role" },
   { name: "Knocksteady", context: "Founding team" },
+] as const;
+
+// Institutional advisory clients — surfaced on the Advisory page as a separate
+// signal from the creator-side partnership receipts. These are the people who
+// pay Brian directly for the way he thinks about the attention economy.
+export const INSTITUTIONAL_CLIENTS = [
+  { name: "Manhattan Institute", kind: "Think tank" },
+  { name: "Webtoon", kind: "Consumer technology platform" },
+  { name: "500 Startups", kind: "Accelerator / investor" },
 ] as const;
 
 // /about page is now built around the principal. Mirrors Smooth Media's About
