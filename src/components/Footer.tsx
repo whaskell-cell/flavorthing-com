@@ -6,7 +6,9 @@ export default function Footer() {
     <footer className="mt-32 border-t border-neutral-200 bg-neutral-50">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="font-serif text-lg text-neutral-900">{SITE.name}</div>
+          <div className="text-lg font-bold tracking-tight text-neutral-900">
+            {SITE.name}
+          </div>
           <p className="mt-3 max-w-sm text-sm text-neutral-600">
             The advisory company for the creator economy.
           </p>

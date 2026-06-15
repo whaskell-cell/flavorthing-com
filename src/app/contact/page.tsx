@@ -7,7 +7,7 @@ export default function ContactPage() {
         <div className="text-sm uppercase tracking-widest text-neutral-500">
           Contact
         </div>
-        <h1 className="mt-4 font-serif text-5xl text-neutral-900 md:text-6xl">
+        <h1 className="mt-4 font-semibold tracking-tight text-5xl text-neutral-900 md:text-6xl">
           Get in touch.
         </h1>
         <p className="prose-editorial mt-10 max-w-2xl text-lg text-neutral-700">
@@ -18,7 +18,7 @@ export default function ContactPage() {
         <div className="mt-12">
           <a
             href={`mailto:${SITE.email}?subject=Hello%20from%20flavorthing.com`}
-            className="font-serif text-3xl text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 md:text-4xl"
+            className="font-semibold tracking-tight text-3xl text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 md:text-4xl"
           >
             {SITE.email}
           </a>

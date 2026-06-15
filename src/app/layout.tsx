@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Caveat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Existing flavorthing.com vibe: all sans-serif, restrained.
+// Inter (sans) for everything; Caveat (handwriting) only for the redline-edit "inserts".
 const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const serif = Cormorant_Garamond({
+const handwriting = Caveat({
   subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  variable: "--font-handwriting",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Flavor Thing — The advisory company for the creator economy.",
   description:
-    "Flavor Thing is the advisory company for the creator economy. We help creators position their brands, navigate their hardest moments, and build operating businesses that scale. We run their brand partnerships. And when we are right about a creator's next move, we put capital behind it.",
+    "The advisory company for the creator economy. New York. Two founders. We work alongside the creators building the next generation of media companies.",
   metadataBase: new URL("https://flavorthing.com"),
 };
 
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${serif.variable} h-full antialiased`}
+      className={`${sans.variable} ${handwriting.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-neutral-900">
         <Header />

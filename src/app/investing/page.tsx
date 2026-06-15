@@ -15,7 +15,7 @@ export default function InvestingPage() {
           <div className="text-sm uppercase tracking-widest text-neutral-500">
             Practice
           </div>
-          <h1 className="mt-4 font-serif text-5xl text-neutral-900 md:text-6xl">
+          <h1 className="mt-4 font-semibold tracking-tight text-5xl text-neutral-900 md:text-6xl">
             {SERVICE.name}
           </h1>
           <p className="prose-editorial mt-8 text-lg text-neutral-700">
@@ -26,7 +26,7 @@ export default function InvestingPage() {
 
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
             Portfolio
           </h2>
           <p className="mt-4 max-w-xl text-neutral-600">
@@ -48,7 +48,7 @@ export default function InvestingPage() {
 
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
             Founder stakes
           </h2>
           <p className="mt-4 max-w-xl text-neutral-600">
@@ -70,7 +70,7 @@ export default function InvestingPage() {
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
             For founders
           </h2>
           <p className="prose-editorial mt-6 text-neutral-700">

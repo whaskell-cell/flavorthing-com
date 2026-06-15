@@ -11,7 +11,7 @@ export default function AdvisoryPage() {
           <div className="text-sm uppercase tracking-widest text-neutral-500">
             Practice
           </div>
-          <h1 className="mt-4 font-serif text-5xl text-neutral-900 md:text-6xl">
+          <h1 className="mt-4 font-semibold tracking-tight text-5xl text-neutral-900 md:text-6xl">
             {SERVICE.name}
           </h1>
           <p className="prose-editorial mt-8 text-lg text-neutral-700">
@@ -22,13 +22,13 @@ export default function AdvisoryPage() {
 
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
             What this looks like
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-2">
             {SERVICE.practiceAreas.map((p) => (
               <article key={p.name}>
-                <h3 className="font-serif text-2xl text-neutral-900">
+                <h3 className="font-semibold tracking-tight text-2xl text-neutral-900">
                   {p.name}
                 </h3>
                 <p className="prose-editorial mt-4 text-neutral-700">{p.body}</p>
@@ -40,7 +40,7 @@ export default function AdvisoryPage() {
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl text-neutral-900 md:text-4xl">
+          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
             Engagement
           </h2>
           <p className="prose-editorial mt-6 text-neutral-700">

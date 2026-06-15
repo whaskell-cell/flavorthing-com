@@ -2,17 +2,26 @@
 // Updated by Sheryl (main agent) from .claude/memory/ + Notion.
 // Brian edits in Claude Code; strategic copy shifts come back to the brief.
 
-export const NORTH_STAR = "Flavor Thing is the advisory company for the creator economy.";
+export const NORTH_STAR = "The advisory company for the creator economy.";
 
-export const HERO_SUBHEAD =
-  "We help creators position their brands, navigate their hardest moments, and build operating businesses that scale. We run their brand partnerships. And when we are right about a creator's next move, we put capital behind it.";
+// Redline-edit hero: enacts the rebrand visually.
+// Each segment is either kept as-is, marked-out (old positioning), or written-in (new positioning).
+export const HERO_REDLINE = [
+  { kind: "text", value: "We are" },
+  { kind: "strike", value: "an accelerator for content creators scaling their businesses" },
+  { kind: "insert", value: "the advisory company for the creator economy" },
+  { kind: "text", value: "." },
+] as const;
+
+// Restrained lead under the hero. Does NOT preview the practice list below.
+export const HERO_LEAD = "New York. Two founders. Six clients we wish we could name and a few we can.";
 
 export const SERVICES = [
   {
     slug: "advisory",
     name: "Advisory",
     short:
-      "Strategic positioning, crisis and reputation, brand and content, and the operating infrastructure that lets a small creator team behave like a much larger one.",
+      "Strategic positioning, crisis and reputation, brand and content, and operating infrastructure for creators running real businesses.",
     long:
       "The headline practice. We work alongside creators on the strategic decisions most agencies and managers will not touch. Positioning a creator inside a market, redirecting a career into a larger addressable space, responding to institutional pressure, and building the systems that let a personality scale into a media company.",
     practiceAreas: [
@@ -38,7 +47,7 @@ export const SERVICES = [
     slug: "partnerships",
     name: "Brand Partnerships",
     short:
-      "We sit between brands and creators and run the partnership end-to-end. Strategy through execution: fit, structure, terms, production, outcomes.",
+      "We sit between brands and creators and run the partnership end-to-end. Strategy through execution.",
     long:
       "Brand Partnerships is where strategy meets execution. We sit between brands and creators and run the partnership from identification through delivery: fit, structure, terms, production, outcomes. The deal does not stop at signature; we stay on it until it ships.",
     practiceAreas: [
@@ -64,16 +73,39 @@ export const SERVICES = [
     slug: "investing",
     name: "Angel Investing",
     short:
-      "Selective angel checks into companies we have conviction in. Not a fund. Sometimes equity-for-services where our advisory and partnership infrastructure is the work.",
+      "Selective angel checks into companies we have conviction in. Sometimes equity-for-services.",
     long:
       "Angel Investing is the smallest of the three by dollars and the most aligned by incentive. We write small checks into companies we have direct conviction in, and we sometimes structure equity-for-services where our advisory and partnership infrastructure is the value-add. We are not a fund.",
     practiceAreas: [],
   },
 ] as const;
 
+// Brand partnership logos. Sourced via Clearbit logo API for first pass; swap to local SVGs later.
+// Brian's list, 2026-05-27 voice memo. Pending Ovitz validation on public-okay names.
+export const PARTNERSHIP_BRANDS = [
+  { name: "Apple", domain: "apple.com" },
+  { name: "Samsung", domain: "samsung.com" },
+  { name: "Coca-Cola", domain: "coca-cola.com" },
+  { name: "On Running", domain: "on.com" },
+  { name: "Toyota", domain: "toyota.com" },
+  { name: "New York Mets", domain: "mlb.com" },
+  { name: "NYC Gov", domain: "nyc.gov" },
+  { name: "Vita Coco", domain: "vitacoco.com" },
+  { name: "Oatly", domain: "oatly.com" },
+  { name: "QuickBooks", domain: "intuit.com" },
+  { name: "Lyft", domain: "lyft.com" },
+] as const;
+
+// Public-okay receipts list for Brand Partnerships page detail.
+// Pending Ovitz sign-off; placeholder text below.
+export const PARTNERSHIP_RECEIPTS: { brand: string; creator: string; year: string }[] = [
+  { brand: "On Running", creator: "Jaeki Cho", year: "2022 to 2026" },
+  { brand: "Apple Pay / TBWA", creator: "Jaeki Cho", year: "2026" },
+  { brand: "Flight Club / Complex", creator: "Jaeki Cho", year: "2026" },
+  { brand: "New York Mets", creator: "Jaeki Cho", year: "2026" },
+];
+
 // Carry over from the existing flavorthing.com /portfolio page.
-// Re-categorized for the new IA: everything goes under Angel Investing,
-// with Founder-stake entries labeled separately.
 export const PORTFOLIO_INVESTMENTS = [
   { name: "Liquid Death", note: "Beverage" },
   { name: "Chamberlain Coffee", note: "Beverage" },
@@ -98,15 +130,6 @@ export const PORTFOLIO_FOUNDER_STAKES = [
   { name: "Righteous Eats", note: "NYC food media and the foundation behind it" },
   { name: "Little Chonk", note: "Dog backpack" },
 ] as const;
-
-// Public-okay receipts for Brand Partnerships page.
-// Pending Ovitz sign-off on which names can surface; placeholder list below.
-export const PARTNERSHIP_RECEIPTS: { brand: string; creator: string; year: string }[] = [
-  { brand: "On Running", creator: "Jaeki Cho", year: "2022 to 2026" },
-  { brand: "Apple Pay / TBWA", creator: "Jaeki Cho", year: "2026" },
-  { brand: "Flight Club / Complex", creator: "Jaeki Cho", year: "2026" },
-  { brand: "New York Mets", creator: "Jaeki Cho", year: "2026" },
-];
 
 export const FOUNDERS = [
   {

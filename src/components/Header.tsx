@@ -5,7 +5,10 @@ export default function Header() {
   return (
     <header className="border-b border-neutral-200 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="font-serif text-xl tracking-tight text-neutral-900">
+        <Link
+          href="/"
+          className="text-xl font-bold tracking-tight text-neutral-900"
+        >
           {SITE.name}
         </Link>
         <nav className="hidden gap-8 text-sm text-neutral-700 md:flex">

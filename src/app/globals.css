@@ -2,8 +2,8 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #18181b;
-  --accent: #1a3a2e; /* deep editorial green — change in one place */
+  --foreground: #0a0a0a;
+  --accent: #d8232a; /* sharpie red — matches the existing flavorthing.com redline accent */
 }
 
 @theme inline {
@@ -11,7 +11,7 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
+  --font-handwriting: var(--font-handwriting);
 }
 
 body {
@@ -20,13 +20,30 @@ body {
   font-feature-settings: "ss01", "kern";
 }
 
-/* Editorial display headings (serif) get tighter tracking + leading. */
-.font-serif {
-  letter-spacing: -0.01em;
-  line-height: 1.05;
+/* Redline-edit hero treatment. The marked-out clause gets a thick red line through it
+   (Sharpie style, not the thin browser default). The inserted clause uses a handwriting
+   font in the same accent color, slightly tilted, sitting beside the strike. */
+.redline-strike {
+  position: relative;
+  color: #0a0a0a;
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.16em;
+  text-underline-offset: -0.05em;
 }
 
-/* Quiet readable body. Long-form paragraphs feel like a strategy memo. */
+.redline-insert {
+  display: inline-block;
+  color: var(--accent);
+  font-family: var(--font-handwriting), cursive;
+  font-weight: 700;
+  transform: rotate(-1deg);
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  line-height: 0.95;
+}
+
+/* Long-form readability for advisory copy: long paragraphs that feel like a strategy memo. */
 .prose-editorial p {
   font-size: 1.0625rem;
   line-height: 1.75;
