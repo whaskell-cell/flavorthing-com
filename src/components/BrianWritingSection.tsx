@@ -31,18 +31,18 @@ export default function BrianWritingSection() {
             </a>
           </div>
           <div className="rounded-md border border-neutral-200 bg-white p-8 md:p-10">
-            <div className="text-xs uppercase tracking-widest text-neutral-500">
-              Latest dispatch
+            <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-neutral-500">
+              <SubstackIcon className="h-4 w-4 text-[var(--accent)]" />
+              {BRIAN_WRITING.name}
             </div>
-            <h3 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-900">
+            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-neutral-900">
               The operating side of the attention economy.
             </h3>
             <p className="mt-4 text-sm text-neutral-600">
-              Weekly. Free.
+              Free to read. New dispatches as they ship.
             </p>
             <p className="mt-10 text-xs text-neutral-400">
-              Newsletter card placeholder. Live Substack feed integration to
-              follow.
+              Newsletter card. Live Substack feed integration to follow.
             </p>
           </div>
         </div>

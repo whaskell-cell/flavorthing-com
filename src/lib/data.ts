@@ -332,15 +332,16 @@ export const SOCIALS = [
   { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/flavorthing" },
   { id: "instagram", label: "Instagram", href: "https://www.instagram.com/flavorthing" },
   { id: "x", label: "X", href: "https://x.com/flavorthing" },
-  { id: "substack", label: "Substack", href: "https://brianlee.substack.com" },
+  { id: "substack", label: "Notes from Baba", href: "https://notesfrombaba.substack.com" },
 ] as const;
 
-// Brian's writing surface. Substack. Featured on the homepage and About page
-// because Brian is positioning as the public face of the firm.
+// Brian's writing surface. Substack ("Notes from Baba"). Featured on the
+// homepage because Brian is positioning as the public face of the firm.
 export const BRIAN_WRITING = {
-  url: "https://brianlee.substack.com",
-  headline: "What Brian is writing.",
+  name: "Notes from Baba",
+  url: "https://notesfrombaba.substack.com",
+  headline: "Notes from Baba.",
   body:
-    "Brian publishes weekly on the operating side of the attention economy. Frameworks, market reads, and the build-in-public notes from running Flavor Thing. Subscribe to read it as it ships.",
+    "Brian's Substack. Notes on the operating side of the attention economy — frameworks, market reads, and the build-in-public dispatches from running Flavor Thing.",
   cta: "Read on Substack",
 } as const;
