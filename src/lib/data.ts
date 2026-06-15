@@ -89,8 +89,10 @@ export const SERVICES = [
   },
 ] as const;
 
-// Brand partnership logos. Sourced via Clearbit logo API for first pass; swap to local SVGs later.
-// Brian's list, 2026-05-27 voice memo. Pending Ovitz validation on public-okay names.
+// Brand partnership logos. Wordmark-placeholder rendering until SVG assets arrive.
+// Brian's list (2026-05-27) trimmed to 10 on 2026-06-15. Vita Coco dropped — weakest
+// brand recognition in the lineup vs. the consumer-tier names around it. Easy swap
+// if Brian wants a different one out.
 export const PARTNERSHIP_BRANDS = [
   { name: "Apple", domain: "apple.com" },
   { name: "Samsung", domain: "samsung.com" },
@@ -99,7 +101,6 @@ export const PARTNERSHIP_BRANDS = [
   { name: "Toyota", domain: "toyota.com" },
   { name: "New York Mets", domain: "mlb.com" },
   { name: "NYC Gov", domain: "nyc.gov" },
-  { name: "Vita Coco", domain: "vitacoco.com" },
   { name: "Oatly", domain: "oatly.com" },
   { name: "QuickBooks", domain: "intuit.com" },
   { name: "Lyft", domain: "lyft.com" },

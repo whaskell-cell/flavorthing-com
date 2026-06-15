@@ -94,7 +94,7 @@ export default function PartnershipsPage() {
               Selected partners
             </span>
           </div>
-          <ul className="grid grid-cols-2 items-center gap-x-8 gap-y-12 md:grid-cols-4 lg:grid-cols-6">
+          <ul className="grid grid-cols-2 items-center gap-x-8 gap-y-12 md:grid-cols-5">
             {PARTNERSHIP_BRANDS.map((b) => (
               <li
                 key={b.name}
