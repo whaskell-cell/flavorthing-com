@@ -8,9 +8,9 @@
 export const NORTH_STAR =
   "We are an advisory company for creators in the attention economy.";
 
-// Tease line under the hero. Restrained. Does NOT preview the practice strip.
-export const HERO_LEAD =
-  "New York. Built by operators who have been on both sides of the deal.";
+// HERO_LEAD intentionally removed 2026-06-15 per Brian. With Variant D
+// (kinetic typography) the manifesto sentence is the hero; no supporting
+// line under it. Restraint over reassurance.
 
 export const SERVICES = [
   {
