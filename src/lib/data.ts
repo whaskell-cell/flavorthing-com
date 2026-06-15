@@ -320,6 +320,9 @@ export const SITE = {
   name: "Flavor Thing",
   url: "https://flavorthing.com",
   email: "hello@flavorthing.com",
+  // Per Brian 2026-06-15: WeWork at 6th Avenue and 37th Street. Address line
+  // is a placeholder pending Brian confirming the suite/number.
+  address: ["WeWork · 6th Avenue at 37th Street", "New York, NY"],
 } as const;
 
 // Social rails. Updated 2026-06-15 PM:
@@ -335,13 +338,29 @@ export const SOCIALS = [
   { id: "substack", label: "Notes from Baba", href: "https://notesfrombaba.substack.com" },
 ] as const;
 
-// Brian's writing surface. Substack ("Notes from Baba"). Featured on the
-// homepage because Brian is positioning as the public face of the firm.
+// Brian's writing surface. Substack ("Notes from Baba"). Rendered on the
+// homepage as a Goldman/JPM-style "latest news" aggregator feed per Brian's
+// 2026-06-15 PM direction. Headlines are placeholders pending a real RSS or
+// Substack API fetch.
 export const BRIAN_WRITING = {
   name: "Notes from Baba",
   url: "https://notesfrombaba.substack.com",
-  headline: "Notes from Baba.",
-  body:
-    "Brian's Substack. Notes on the operating side of the attention economy — frameworks, market reads, and the build-in-public dispatches from running Flavor Thing.",
-  cta: "Read on Substack",
+  // Placeholder latest-post feed. Future: pull from Substack feed JSON.
+  posts: [
+    {
+      title: "The operating side of the attention economy.",
+      date: "June 12, 2026",
+      readTime: "6 min read",
+    },
+    {
+      title: "What McKinsey misses about creator businesses.",
+      date: "June 5, 2026",
+      readTime: "4 min read",
+    },
+    {
+      title: "The case for incubation over investment.",
+      date: "May 29, 2026",
+      readTime: "5 min read",
+    },
+  ],
 } as const;

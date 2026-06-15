@@ -1,51 +1,70 @@
 import { BRIAN_WRITING } from "@/lib/data";
 import { SubstackIcon } from "@/components/SocialIcons";
 
-// "From Brian" — surface for Brian Lee's Substack. Used on home and About.
-// He is positioning as the face of the firm; his writing is the public
-// front door to that.
+// "Latest from Notes from Baba" — Goldman/JPM-style news aggregator surface
+// per Brian 2026-06-15 PM. A small list of recent post titles + dates, each
+// linking through to Substack. Replaces the earlier card-style manifesto block.
 
 export default function BrianWritingSection() {
   return (
-    <section className="border-t border-neutral-200 bg-neutral-50">
+    <section className="border-t border-neutral-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="grid items-center gap-12 md:grid-cols-[1.1fr_1fr] md:gap-16">
+        <div className="mb-12 flex items-end justify-between">
           <div>
             <div className="text-xs uppercase tracking-widest text-neutral-500">
-              From Brian
+              Latest
             </div>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-900 md:text-5xl">
-              {BRIAN_WRITING.headline}
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              From {BRIAN_WRITING.name}
             </h2>
-            <p className="mt-8 max-w-xl text-neutral-700 md:text-lg md:leading-relaxed">
-              {BRIAN_WRITING.body}
-            </p>
-            <a
-              href={BRIAN_WRITING.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
-            >
-              <SubstackIcon className="h-4 w-4" />
-              {BRIAN_WRITING.cta}
-            </a>
           </div>
-          <div className="rounded-md border border-neutral-200 bg-white p-8 md:p-10">
-            <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-neutral-500">
-              <SubstackIcon className="h-4 w-4 text-[var(--accent)]" />
-              {BRIAN_WRITING.name}
-            </div>
-            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-neutral-900">
-              The operating side of the attention economy.
-            </h3>
-            <p className="mt-4 text-sm text-neutral-600">
-              Free to read. New dispatches as they ship.
-            </p>
-            <p className="mt-10 text-xs text-neutral-400">
-              Newsletter card. Live Substack feed integration to follow.
-            </p>
-          </div>
+          <a
+            href={BRIAN_WRITING.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-2 text-sm text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)] md:inline-flex"
+          >
+            <SubstackIcon className="h-4 w-4 text-[var(--accent)]" />
+            View all on Substack
+          </a>
         </div>
+
+        <ul className="divide-y divide-neutral-200 border-y border-neutral-200">
+          {BRIAN_WRITING.posts.map((post, i) => (
+            <li key={i}>
+              <a
+                href={BRIAN_WRITING.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-2 py-6 transition-colors hover:bg-neutral-50 md:flex-row md:items-baseline md:justify-between md:gap-8 md:px-2"
+              >
+                <h3 className="text-lg font-semibold tracking-tight text-neutral-900 transition-colors group-hover:text-[var(--accent)] md:text-xl">
+                  {post.title}
+                </h3>
+                <div className="flex shrink-0 items-center gap-4 text-xs uppercase tracking-widest text-neutral-500">
+                  <span>{post.date}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={BRIAN_WRITING.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex items-center gap-2 text-sm text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)] md:hidden"
+        >
+          <SubstackIcon className="h-4 w-4 text-[var(--accent)]" />
+          View all on Substack
+        </a>
+
+        <p className="mt-10 text-xs text-neutral-400">
+          Live Substack feed integration to follow. Headlines above are
+          placeholders.
+        </p>
       </div>
     </section>
   );

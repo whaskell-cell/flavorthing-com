@@ -64,18 +64,18 @@ export default function AdvisoryPage() {
                 attention economy. The work spans market sizing, policy
                 framing, platform strategy, and creator-landscape rigor.
               </p>
-              <ul className="mt-10 space-y-4 text-sm">
+              <ul className="mt-10 space-y-0 text-sm">
                 {INSTITUTIONAL_CLIENTS.map((c) => (
                   <li
                     key={c.name}
-                    className="flex items-baseline justify-between gap-6 border-t border-neutral-200 pt-4"
+                    className="border-t border-neutral-200 pt-3 pb-4 text-neutral-700"
                   >
-                    <span className="font-semibold tracking-tight text-neutral-900">
+                    <div className="font-medium text-neutral-900">
                       {c.name}
-                    </span>
-                    <span className="text-xs uppercase tracking-widest text-neutral-500">
+                    </div>
+                    <div className="mt-1 text-xs text-neutral-500">
                       {c.kind}
-                    </span>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -97,30 +97,30 @@ export default function AdvisoryPage() {
                 decisions most agencies and managers will not touch. From
                 category positioning to crisis response.
               </p>
-              <ul className="mt-10 space-y-4 text-sm">
-                <li className="flex items-baseline justify-between gap-6 border-t border-neutral-200 pt-4">
-                  <span className="font-semibold tracking-tight text-neutral-900">
+              <ul className="mt-10 space-y-0 text-sm">
+                <li className="border-t border-neutral-200 pt-3 pb-4 text-neutral-700">
+                  <div className="font-medium text-neutral-900">
                     Anderson .Paak
-                  </span>
-                  <span className="text-xs uppercase tracking-widest text-neutral-500">
+                  </div>
+                  <div className="mt-1 text-xs text-neutral-500">
                     Music / Multi-property
-                  </span>
+                  </div>
                 </li>
-                <li className="flex items-baseline justify-between gap-6 border-t border-neutral-200 pt-4">
-                  <span className="font-semibold tracking-tight text-neutral-900">
+                <li className="border-t border-neutral-200 pt-3 pb-4 text-neutral-700">
+                  <div className="font-medium text-neutral-900">
                     Jonathan Park
-                  </span>
-                  <span className="text-xs uppercase tracking-widest text-neutral-500">
+                  </div>
+                  <div className="mt-1 text-xs text-neutral-500">
                     Platform / Scale
-                  </span>
+                  </div>
                 </li>
-                <li className="flex items-baseline justify-between gap-6 border-t border-neutral-200 pt-4">
-                  <span className="font-semibold tracking-tight text-neutral-900">
+                <li className="border-t border-neutral-200 pt-3 pb-4 text-neutral-700">
+                  <div className="font-medium text-neutral-900">
                     Jaeki Cho
-                  </span>
-                  <span className="text-xs uppercase tracking-widest text-neutral-500">
+                  </div>
+                  <div className="mt-1 text-xs text-neutral-500">
                     Food / Culture / NYC
-                  </span>
+                  </div>
                 </li>
               </ul>
               <p className="mt-6 text-xs text-neutral-400">
