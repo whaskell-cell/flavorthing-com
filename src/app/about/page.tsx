@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       {/* Manifesto hero. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
             About
           </div>
@@ -25,7 +25,7 @@ export default function AboutPage() {
 
       {/* Founder / origin — first person, Brian-led. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Founder
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
       {/* Co-founder — Jaeki. Restrained, deferential to the principal but real. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Co-founder
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       {/* Council of advisors. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Council
@@ -133,7 +133,7 @@ export default function AboutPage() {
 
       {/* Past affiliates — receipts of Brian's career. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Past affiliates
@@ -163,7 +163,7 @@ export default function AboutPage() {
 
       {/* Mission. Substantive paragraph, not slogans. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Mission
@@ -177,7 +177,7 @@ export default function AboutPage() {
 
       {/* Pull quote. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <blockquote className="mx-auto max-w-4xl text-center">
             <p className="text-3xl font-semibold leading-tight tracking-tight text-neutral-900 md:text-5xl">
               &ldquo;{ABOUT.pullQuote}&rdquo;
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
       {/* CTA. */}
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-20">
             <div className="text-xs uppercase tracking-widest text-neutral-500">
               Get in touch

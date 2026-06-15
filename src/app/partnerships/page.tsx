@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
   SERVICES,
-  PARTNERSHIP_RECEIPTS,
   PARTNERSHIP_BRANDS,
+  CASE_STUDIES,
 } from "@/lib/data";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
@@ -11,6 +11,7 @@ const SERVICE = SERVICES.find((s) => s.slug === "partnerships")!;
 export default function PartnershipsPage() {
   return (
     <>
+      {/* Practice hero. */}
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
@@ -25,27 +26,23 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* Two-audience split. The reason this page is rebuilt: both sides of the table. */}
+      {/* Two-audience split — pro-agency register. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid gap-12 md:grid-cols-2">
             <article className="flex flex-col">
               <PlaceholderImage
-                label="Creator with brand campaign assets"
+                label="Creator partnership campaign assets"
                 variant="carousel"
               />
-              <div className="text-xs uppercase tracking-widest text-neutral-500 mt-8">
+              <div className="mt-8 text-xs uppercase tracking-widest text-neutral-500">
                 For creators
               </div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-                Your deals, run by a senior team.
+                Your brand business, architected.
               </h2>
-              <p className="mt-6 text-neutral-700 md:leading-relaxed">
-                If you are a creator earning real revenue from brand work and
-                want a team to structure, negotiate, produce, and report on
-                your partnerships, we run them end to end. Some of the
-                strongest creators in food, fashion, sport, and culture run
-                their brand business with us.
+              <p className="prose-editorial mt-6 text-neutral-700">
+                {SERVICE.practiceAreas[0].body}
               </p>
               <Link
                 href="/contact"
@@ -57,20 +54,17 @@ export default function PartnershipsPage() {
 
             <article className="flex flex-col">
               <PlaceholderImage
-                label="Brand-side meeting with FT and creator"
+                label="Brand team and creator on set"
                 variant="carousel"
               />
-              <div className="text-xs uppercase tracking-widest text-neutral-500 mt-8">
+              <div className="mt-8 text-xs uppercase tracking-widest text-neutral-500">
                 For brands
               </div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-                Access to creators who actually move audiences.
+                A senior strategic counterpart, not a roster.
               </h2>
-              <p className="mt-6 text-neutral-700 md:leading-relaxed">
-                If you are a brand or agency looking for a way in to the
-                creators we work with, we design and run the campaign with you
-                from creative through delivery. We do not broker
-                introductions. We build the partnership.
+              <p className="prose-editorial mt-6 text-neutral-700">
+                {SERVICE.practiceAreas[1].body}
               </p>
               <Link
                 href="/contact"
@@ -85,7 +79,7 @@ export default function PartnershipsPage() {
 
       {/* Logo wall. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="mb-12 flex items-end justify-between">
             <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
               Brands we have worked with
@@ -113,13 +107,56 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
+      {/* Selected case studies — Smooth-style brand x creator x outcome. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="mb-12">
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              Selected case studies
+            </h2>
+            <p className="mt-4 max-w-2xl text-neutral-600">
+              A representative slice of the brand partnerships we have run.
+            </p>
+          </div>
+          <ul className="space-y-12">
+            {CASE_STUDIES.map((c) => (
+              <li
+                key={c.brand}
+                className="grid gap-8 border-t border-neutral-200 pt-10 md:grid-cols-[260px_1fr] md:gap-12"
+              >
+                <PlaceholderImage
+                  label={`${c.brand} × ${c.creator}`}
+                  variant="square"
+                />
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-neutral-500">
+                    {c.accolade}
+                  </div>
+                  <h3 className="mt-3 text-2xl font-semibold tracking-tight text-neutral-900">
+                    {c.brand} × {c.creator}
+                  </h3>
+                  <p className="mt-3 text-lg text-neutral-700 md:leading-relaxed">
+                    {c.headline}
+                  </p>
+                  <p className="mt-5 text-neutral-700">{c.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-xs text-neutral-400">
+            Campaign imagery placeholders. Stills to follow.
+          </p>
+        </div>
+      </section>
+
+      {/* How we run a partnership — practice areas 3 and 4. */}
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             How we run a partnership
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-2">
-            {SERVICE.practiceAreas.map((p) => (
+            {SERVICE.practiceAreas.slice(2).map((p) => (
               <article key={p.name}>
                 <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
                   {p.name}
@@ -128,28 +165,6 @@ export default function PartnershipsPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-            Selected work
-          </h2>
-          <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 text-sm md:grid-cols-3">
-            {PARTNERSHIP_RECEIPTS.map((r) => (
-              <li
-                key={r.brand}
-                className="border-t border-neutral-200 pt-4 text-neutral-700"
-              >
-                <div className="font-medium text-neutral-900">{r.brand}</div>
-                <div className="mt-1 text-neutral-500">with {r.creator}</div>
-                <div className="mt-1 text-xs uppercase tracking-widest text-neutral-400">
-                  {r.year}
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </>

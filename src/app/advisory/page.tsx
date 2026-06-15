@@ -8,27 +8,27 @@ export default function AdvisoryPage() {
     <>
       <section className="border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="text-sm uppercase tracking-widest text-neutral-500">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
             Practice
           </div>
-          <h1 className="mt-4 font-semibold tracking-tight text-5xl text-neutral-900 md:text-6xl">
+          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-neutral-900 md:text-6xl">
             {SERVICE.name}
           </h1>
-          <p className="prose-editorial mt-8 text-lg text-neutral-700">
+          <p className="prose-editorial mt-8 max-w-3xl text-lg text-neutral-700 md:text-xl md:leading-relaxed">
             {SERVICE.long}
           </p>
         </div>
       </section>
 
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             What this looks like
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-2">
             {SERVICE.practiceAreas.map((p) => (
               <article key={p.name}>
-                <h3 className="font-semibold tracking-tight text-2xl text-neutral-900">
+                <h3 className="text-2xl font-semibold tracking-tight text-neutral-900">
                   {p.name}
                 </h3>
                 <p className="prose-editorial mt-4 text-neutral-700">{p.body}</p>
@@ -39,18 +39,18 @@ export default function AdvisoryPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-semibold tracking-tight text-3xl text-neutral-900 md:text-4xl">
-            Engagement
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+            {SERVICE.engagement?.title ?? "Engagement"}
           </h2>
-          <p className="prose-editorial mt-6 text-neutral-700">
-            Most Advisory engagements run as monthly retainers or scoped
-            projects. We occasionally take equity in lieu of fees when the
-            company and the relationship warrant it.
-          </p>
+          <div className="prose-editorial mt-8 max-w-3xl space-y-6 text-neutral-700">
+            {SERVICE.engagement?.body.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
           <Link
             href="/contact"
-            className="mt-10 inline-block border-b border-neutral-900 pb-1 text-sm text-neutral-900 hover:text-neutral-600"
+            className="mt-10 inline-block text-sm text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-[var(--accent)]"
           >
             Start a conversation
           </Link>

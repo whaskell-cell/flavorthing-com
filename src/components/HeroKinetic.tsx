@@ -9,7 +9,7 @@ import { NORTH_STAR } from "@/lib/data";
 
 // Words inside this set get the accent color treatment. Multi-word phrases
 // are matched as a contiguous run during render.
-const EMPHASIZE: Set<string> = new Set(["advisory", "attention", "economy."]);
+const EMPHASIZE: Set<string> = new Set(["operating", "attention", "economy."]);
 
 export default function HeroKinetic() {
   const words = NORTH_STAR.split(" ");

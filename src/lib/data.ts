@@ -2,11 +2,13 @@
 // Updated by Sheryl (main agent) from .claude/memory/ + Notion.
 // Brian edits in Claude Code; strategic copy shifts come back to the brief.
 
-// Brian's locked positioning (2026-06-15 voice memo).
-// He explicitly shifted from "creator economy" to "creators in the attention economy"
-// — broader frame, sharper claim. Hero now states this directly, no redline edit.
+// Brian's locked positioning (2026-06-15 voice memo + later swap).
+// Hero noun moved from "advisory company" to "operating firm" so the hero word
+// distinguishes from the "Advisory" practice below, and so register matches
+// McKinsey/Bain/Joele Frank ("firm" not "company"). "Operating" claims execution
+// rather than counsel, which is the actual differentiator vs. Smooth + Reign Maker.
 export const NORTH_STAR =
-  "We are an advisory company for creators in the attention economy.";
+  "We are an operating firm for creators in the attention economy.";
 
 // HERO_LEAD intentionally removed 2026-06-15 per Brian. With Variant D
 // (kinetic typography) the manifesto sentence is the hero; no supporting
@@ -22,46 +24,55 @@ export const SERVICES = [
       "The headline practice. We work alongside creators on the strategic decisions most agencies and managers will not touch. Positioning a creator inside a market, redirecting a career into a larger addressable space, responding to institutional pressure, and building the systems that let a personality scale into a media company.",
     practiceAreas: [
       {
-        name: "Strategic positioning",
+        name: "Positioning & Category Strategy",
         body: "Where a creator fits in the market today, where the market is going, and where they should move next. Sometimes that means redirecting a lifestyle creator into consumer technology reviews because the addressable market is structurally larger.",
       },
       {
-        name: "Crisis and reputation",
-        body: "The work nobody wants to call about until they have to. Brand fire-drills, comms response, navigating institutional pressure with the right voice and the right speed.",
+        name: "Reputation & Crisis Communications",
+        body: "The work nobody wants to call about until they have to. Brand fire-drills, comms response, navigating institutional and platform pressure with the right voice and the right speed.",
       },
       {
-        name: "Brand and content",
+        name: "Brand & Content Development",
         body: "Voice, intellectual property development, platform strategy, content roadmaps. The frameworks a creator needs to behave like a media company instead of a personality.",
       },
       {
-        name: "Operations",
+        name: "Operating Infrastructure",
         body: "The workflow, automation, and tooling layer that lets a small team behave like a much larger one. Includes our AI agent operating playbook, which we run inside our own holding company.",
       },
     ],
+    engagement: {
+      title: "Engagement",
+      // Brian: "we're the ones that can take something that's already really well
+      // defined and successful, but take it to the next level. Word or two about scale."
+      body: [
+        "Our work tends to land in one of two places. Either we are designing the next phase for a creator already operating at meaningful scale and looking to compound it. Or we are scoping a defined transformation for a creator approaching the inflection point where the operating model has to change.",
+        "Most engagements run as monthly retainers or scoped projects. We occasionally take equity in lieu of fees when the company, the relationship, and the conviction warrant it.",
+      ],
+    },
   },
   {
     slug: "partnerships",
     name: "Brand Partnerships",
     short:
-      "Two sides of one table. Creators who want their deals run by a senior team, and brands who want a way in to the creators we work with.",
+      "Structured for creators who want their brand business architected. Built for brand teams who want a senior counterpart on the strategy side.",
     long:
-      "Brand Partnerships works in both directions. Creators come to us because they want their deals structured and run by a team that has been on the other side of the table. Brands come to us because we have direct relationships with creators whose audiences and craft they want to be in business with. We sit between both sides and run the partnership from identification through delivery: fit, structure, terms, production, outcomes.",
+      "Brand Partnerships is where strategy meets execution. We architect partnerships in both directions: for creators who want their brand business positioned, structured, and renewed, and for brand teams who want a senior counterpart who can run a campaign from creative through delivery. We are not an introduction service. We design the work and stay on it until it ships.",
     practiceAreas: [
       {
         name: "For creators",
-        body: "If you are a creator earning real revenue from brand work and want a senior team to run your partnerships, this is the practice that runs them. We negotiate, structure, produce, and report. Some of the strongest creators in food, fashion, sport, and culture run their brand business with us.",
+        body: "Inbound brand interest is leverage if it is positioned well. We work with creators on the strategic positioning of inbound opportunities, the structuring and negotiation of terms, and the multi-channel architecture that turns a single campaign into compounding value. The brand business that lasts is the brand business that is set up well from the start.",
       },
       {
         name: "For brands",
-        body: "If you are a brand or agency looking for a way in to one of our creator partners, this is the practice that opens the door. We do not broker introductions. We design and run the campaign with you, from creative through delivery.",
+        body: "We design and run creator partnerships with brand teams and agencies who want a senior strategic counterpart, not a roster. Brand fit, deal structure, creative direction, production oversight, and outcomes reporting. The work has to be good or the partnership does not renew, and most of our brand partnerships are renewals.",
       },
       {
-        name: "Deal structure and terms",
-        body: "Pricing, scope, deliverables, performance terms, exclusivity windows. Structured to grow into multi-year partnerships, not one-off transactions.",
+        name: "Deal architecture",
+        body: "Pricing, scope, deliverables, performance terms, exclusivity windows, IP rights. Structured to grow into multi-year programs, not one-off transactions.",
       },
       {
-        name: "Production and outcomes",
-        body: "We oversee creative production end-to-end. Measurement and reporting on the back end. Most of our partnerships are renewals.",
+        name: "Production & outcomes",
+        body: "We oversee creative production end to end and report on outcomes after delivery. The case for the next campaign is built into the close of this one.",
       },
     ],
   },
@@ -114,6 +125,48 @@ export const PARTNERSHIP_RECEIPTS: { brand: string; creator: string; year: strin
   { brand: "Flight Club / Complex", creator: "Jaeki Cho", year: "2026" },
   { brand: "New York Mets", creator: "Jaeki Cho", year: "2026" },
 ];
+
+// Named case studies — brand x creator x outcome, structured like Smooth Media's
+// "For Brands" examples (Matt Wolfe x HubSpot, CatGPT x Bolt, etc). Brian named
+// these in his 2026-06-15 voice memo. Detail copy is placeholder; refine with
+// Ovitz once campaign outcome data is confirmed for each.
+export const CASE_STUDIES = [
+  {
+    brand: "NYC Tourism + NYC Gov",
+    creator: "Jaeki Cho",
+    headline: "A multi-platform love letter to New York that won a Webby.",
+    body: "Concept-to-distribution campaign with NYC Tourism and NYC city government. Original short-form video across Instagram and TikTok plus on-the-ground activations. Recognized with a Webby Award.",
+    accolade: "Webby Award winner",
+  },
+  {
+    brand: "Ray-Ban Meta",
+    creator: "Jaeki Cho",
+    headline: "A launch campaign that turned a product drop into a cultural moment.",
+    body: "Brand-creator partnership for Meta's Ray-Ban smart glasses across Instagram and TikTok. The campaign went viral inside its first 48 hours and outperformed paid benchmarks across both surfaces.",
+    accolade: "Viral campaign",
+  },
+  {
+    brand: "Lyft",
+    creator: "Jaeki Cho",
+    headline: "A rideshare campaign that punched above its budget.",
+    body: "Multi-format Lyft campaign positioned as a New York love letter. Earned organic reach orders of magnitude above paid baseline and was renewed.",
+    accolade: "Viral campaign",
+  },
+  {
+    brand: "On Running",
+    creator: "Jaeki Cho",
+    headline: "A four-year ambassadorship that anchors the running and lifestyle category.",
+    body: "Multi-year, multi-campaign partnership across product launches, NYC Marathon activations, and editorial. The longest-running partnership on our roster, currently in its fourth year.",
+    accolade: "Multi-year partnership",
+  },
+  {
+    brand: "Apple Pay × TBWA",
+    creator: "Jaeki Cho",
+    headline: "A flagship financial-product campaign for Apple via TBWA.",
+    body: "Strategic partnership architecture and creative production for an Apple Pay campaign through TBWA. Multi-channel rollout across Apple's brand surfaces and Jaeki's owned channels.",
+    accolade: "Brand x agency partnership",
+  },
+] as const;
 
 // Carry over from the existing flavorthing.com /portfolio page.
 export const PORTFOLIO_INVESTMENTS = [

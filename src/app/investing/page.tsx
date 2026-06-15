@@ -27,7 +27,7 @@ export default function InvestingPage() {
 
       {/* Three modes — angel, intros, incubation. */}
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             Three modes
           </h2>
@@ -49,7 +49,7 @@ export default function InvestingPage() {
 
       {/* Incubation example — Little Chonk. */}
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <PlaceholderImage
               label="Little Chonk dog backpack on a Manhattan sidewalk"
@@ -76,7 +76,7 @@ export default function InvestingPage() {
       </section>
 
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             Portfolio
           </h2>
@@ -98,7 +98,7 @@ export default function InvestingPage() {
       </section>
 
       <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             Founder stakes
           </h2>
@@ -120,7 +120,7 @@ export default function InvestingPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             For founders
           </h2>
