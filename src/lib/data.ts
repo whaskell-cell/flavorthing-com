@@ -136,15 +136,40 @@ export const FOUNDERS = [
     name: "Brian Lee",
     role: "Co-founder and President",
     blurb:
-      "Operator background across Broadcom, Knocksteady, Group Nine, and Righteous Eats. Builds the operating infrastructure underneath everything we do.",
+      "Two decades inside operating companies, including Broadcom, Knocksteady, and Group Nine Media. Long-time advisor to and investor in the creator economy. Built and exited businesses on both sides of the table — the brand side and the talent side.",
   },
   {
     name: "Jaeki Cho",
     role: "Co-founder",
     blurb:
-      "Creator, journalist, and the face of Righteous Eats. The customer we serve, on the founding team.",
+      "One of New York's most recognized food and culture creators, with an audience built over a decade as a journalist and on-camera personality. Founder of Righteous Eats and the face of much of the partnership work we run. The customer we serve, on the founding team.",
   },
 ] as const;
+
+// /about page content. Structured to mirror Smooth Media's About template
+// (manifesto hero, origin, founders, mission, scale, pull quote) so the
+// register reads like a peer, not a smaller version.
+export const ABOUT = {
+  manifesto:
+    "We started Flavor Thing because creators are the next generation of operating businesses, and the firms built to serve them do not yet exist.",
+  origin: [
+    "Brian Lee spent two decades inside operating companies — Broadcom, Knocksteady, Group Nine Media — through several exits and a long run advising and investing in the creator economy from the brand side. Jaeki Cho built an audience over a decade as a journalist and on-camera personality, then quietly turned Righteous Eats into a media property that runs partnerships with the largest brands in the country.",
+    "We met where the operator world and the creator world overlap, looked at the field of firms available to creators running real businesses, and concluded the right one had not been built yet. Talent agencies were good at booking but not at strategy. Strategy consultancies were good at frameworks but not at the cultural register the work requires. Early-stage funds wrote checks but had no operating muscle. The creators who needed all three were stitching together three different vendors who did not coordinate.",
+    "Flavor Thing is the firm we wished existed when we were on the other side of the conversation.",
+  ],
+  mission:
+    "Creators today are running real businesses with real revenue, real teams, and real consequences. They have brands. They have audiences. They have decisions to make every week that no MBA-trained consultancy understands and no talent agency is built to handle. We built Flavor Thing for that specific gap: an operating firm that advises the strategy, runs the brand partnerships, and puts capital behind the right bets. From one team.",
+  howWeWork:
+    "We run a two-founder bench amplified by an operating stack that lets us deliver at a level associated with much larger firms. That is how we are able to do McKinsey-quality strategy work, CAA-quality deal making, and a fund-quality capital allocation discipline as a small, deliberate firm. The stack does not show up in the work. The outcomes do.",
+  scaleClaims: [
+    "11 brand partnerships across consumer technology, sports, mobility, and beverage",
+    "17 active angel positions, with founder stakes in Righteous Eats and Little Chonk",
+    "Multi-year partnerships including On Running (4 years and counting), Apple Pay via TBWA, and the New York Mets",
+    "A 501(c)(3) sister organization, Righteous Eats Foundation, that anchors our cause-marketing work",
+  ],
+  pullQuote:
+    "Creators are the next generation of operating businesses. Flavor Thing is the operating company built for them.",
+} as const;
 
 export const NAV = [
   { href: "/advisory", label: "Advisory" },
