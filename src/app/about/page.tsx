@@ -5,6 +5,8 @@ import {
   COFOUNDER,
   ADVISORS,
   PAST_AFFILIATES,
+  METRICS,
+  TESTIMONIAL,
 } from "@/lib/data";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
@@ -72,6 +74,44 @@ export default function AboutPage() {
               {COFOUNDER.bio}
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* By the numbers — quantified scale, top of mind for institutional buyers. */}
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
+            By the numbers
+          </div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+            What the work has added up to.
+          </h2>
+          <ul className="mt-16 grid grid-cols-2 gap-y-12 md:grid-cols-5 md:gap-x-8">
+            {METRICS.map((m) => (
+              <li key={m.label}>
+                <div className="text-4xl font-semibold tracking-tight text-neutral-900 md:text-5xl">
+                  {m.value}
+                </div>
+                <div className="mt-3 max-w-[15ch] text-xs uppercase tracking-widest text-neutral-500">
+                  {m.label}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Testimonial — single pull quote. Anonymized v1. */}
+      <section className="border-b border-neutral-200 bg-neutral-950 text-white">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <blockquote className="mx-auto max-w-4xl">
+            <p className="text-2xl font-medium leading-snug tracking-tight md:text-4xl">
+              &ldquo;{TESTIMONIAL.quote}&rdquo;
+            </p>
+            <footer className="mt-10 text-xs uppercase tracking-widest text-white/60">
+              — {TESTIMONIAL.attribution}
+            </footer>
+          </blockquote>
         </div>
       </section>
 

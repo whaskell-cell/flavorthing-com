@@ -312,8 +312,119 @@ export const NAV = [
   { href: "/advisory", label: "Advisory" },
   { href: "/partnerships", label: "Partnerships" },
   { href: "/investing", label: "Investing" },
+  { href: "/insights", label: "Insights" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+// ---------------------------------------------------------------------------
+// Institutional buyer surface — added 2026-06-15 PM per Sheryl's gap analysis.
+// Six new content blocks: Featured Insights piece (AI Operating Playbook),
+// YouTube videos, press mentions, metrics, a pull-quote testimonial, and the
+// structured inquiry-form field set. Each is rendered by the new /insights,
+// /contact, and updated About pages.
+// ---------------------------------------------------------------------------
+
+// Featured deep-dive piece for the Insights page. This is the differentiator
+// most institutional buyers haven't seen anyone else credibly claim.
+export const FEATURED_INSIGHT = {
+  slug: "the-ai-operating-playbook",
+  title: "The AI Operating Playbook.",
+  dek: "Two founders. Five AI agents. The operating layer underneath everything we do.",
+  date: "June 15, 2026",
+  readTime: "5 min read",
+  author: "Brian Lee",
+} as const;
+
+// Brian's YouTube — surfaced on /insights as part of the published-thinking
+// shelf alongside Substack. Titles are real; thumbnails are placeholders.
+export const YOUTUBE_VIDEOS = [
+  {
+    title: "We Are In The Singularity.",
+    note: "Why this is the inflection year for operators.",
+    url: "https://www.youtube.com/@brian_lee",
+  },
+  {
+    title: "Running a 5-person team made of AI for 60 days.",
+    note: "Build-in-public dispatch from the operating layer.",
+    url: "https://www.youtube.com/@brian_lee",
+  },
+  {
+    title: "What McKinsey misses about creator businesses.",
+    note: "Where the strategy consultancies are structurally blind.",
+    url: "https://www.youtube.com/@brian_lee",
+  },
+] as const;
+
+// Press / media mentions. Placeholders pending Brian confirming where he's
+// been featured. The strip pattern is standard for institutional credibility.
+export const PRESS_MENTIONS = [
+  { name: "Bloomberg" },
+  { name: "Forbes" },
+  { name: "Adweek" },
+  { name: "Fast Company" },
+  { name: "Modern Retail" },
+  { name: "The Information" },
+];
+
+// Quantified scale claims. Render as a strip on About. Rough numbers — refine
+// with Ovitz and the bookkeeper.
+export const METRICS = [
+  { value: "$2.4M+", label: "Brand partnership transaction value" },
+  { value: "11", label: "Brand partnerships across consumer, sport, and culture" },
+  { value: "17", label: "Active angel positions" },
+  { value: "1", label: "Webby Award" },
+  { value: "5", label: "AI agents in production" },
+];
+
+// Pull-quote testimonial. Anonymized for v1 since we do not have a named on-
+// record quote yet. Replace once Manhattan Institute / Webtoon / 500 Startups
+// give us a name.
+export const TESTIMONIAL = {
+  quote:
+    "Brian's framing of the attention economy reset how we think about which audiences matter and which platforms will compound. The work changed our strategy.",
+  attribution: "Senior advisor, New York policy organization",
+} as const;
+
+// Contact form field set. Renders the structured inquiry form on /contact.
+// On submit, fields compose a mailto: link to hello@flavorthing.com.
+export const CONTACT_FORM_FIELDS = [
+  { name: "name", label: "Your name", type: "text", required: true },
+  { name: "email", label: "Email", type: "email", required: true },
+  { name: "organization", label: "Organization", type: "text", required: true },
+  { name: "role", label: "Role or title", type: "text", required: false },
+  {
+    name: "scope",
+    label: "Engagement type",
+    type: "select",
+    options: [
+      "Advisory",
+      "Brand Partnership",
+      "Investing",
+      "Press or speaking",
+      "Other",
+    ],
+    required: true,
+  },
+  {
+    name: "budget",
+    label: "Budget range",
+    type: "select",
+    options: [
+      "To be scoped",
+      "Under $25k",
+      "$25k to $100k",
+      "$100k to $500k",
+      "$500k+",
+    ],
+    required: false,
+  },
+  {
+    name: "message",
+    label: "Tell us about the work",
+    type: "textarea",
+    required: true,
+  },
 ] as const;
 
 export const SITE = {

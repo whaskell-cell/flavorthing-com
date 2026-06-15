@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SERVICES, INSTITUTIONAL_CLIENTS } from "@/lib/data";
+import { SERVICES, INSTITUTIONAL_CLIENTS, FEATURED_INSIGHT } from "@/lib/data";
 
 const SERVICE = SERVICES.find((s) => s.slug === "advisory")!;
 
@@ -127,6 +127,72 @@ export default function AdvisoryPage() {
                 Selected partners. Many engagements are private.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Operating Playbook callout — surfaces the differentiator that
+          most institutional buyers haven't seen credibly claimed elsewhere.
+          Links to the full piece on /insights. */}
+      <section className="border-b border-neutral-200 bg-neutral-950 text-white">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-white/60">
+                Featured perspective
+              </div>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+                The AI Operating Playbook.
+              </h2>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
+                Two founders. Five AI agents. The operating layer underneath
+                everything we do — and the layer we can design with you.
+              </p>
+              <Link
+                href={`/insights/${FEATURED_INSIGHT.slug}`}
+                className="mt-10 inline-block border-b border-white/40 pb-1 text-sm text-white transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                Read the piece
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <div className="rounded-md border border-white/20 bg-white/[0.04] p-10">
+                <ul className="space-y-4 text-sm">
+                  <li className="flex items-baseline gap-4">
+                    <span className="w-16 text-xs uppercase tracking-widest text-white/40">
+                      Sheryl
+                    </span>
+                    <span className="text-white/80">COO. Orchestrates.</span>
+                  </li>
+                  <li className="flex items-baseline gap-4">
+                    <span className="w-16 text-xs uppercase tracking-widest text-white/40">
+                      Marc
+                    </span>
+                    <span className="text-white/80">Content strategy.</span>
+                  </li>
+                  <li className="flex items-baseline gap-4">
+                    <span className="w-16 text-xs uppercase tracking-widest text-white/40">
+                      Mayer
+                    </span>
+                    <span className="text-white/80">Content operations.</span>
+                  </li>
+                  <li className="flex items-baseline gap-4">
+                    <span className="w-16 text-xs uppercase tracking-widest text-white/40">
+                      Ovitz
+                    </span>
+                    <span className="text-white/80">
+                      Brand partnerships.
+                    </span>
+                  </li>
+                  <li className="flex items-baseline gap-4">
+                    <span className="w-16 text-xs uppercase tracking-widest text-white/40">
+                      Tadashi
+                    </span>
+                    <span className="text-white/80">Foundation work.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
