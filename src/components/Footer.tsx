@@ -1,19 +1,31 @@
 import Link from "next/link";
-import { NAV, SITE } from "@/lib/data";
+import { NAV, SITE, SOCIALS } from "@/lib/data";
 
+// Per Brian 2026-06-15:
+// - Drop the REF / 501(c)(3) line (REF is not a subsidiary of Flavor Thing).
+// - Drop the "advisory company for the creator economy" tagline (already
+//   carried by the hero; footer should not repeat positioning).
+// - Add social placeholders for LinkedIn, Instagram, Twitter, Newsletter.
 export default function Footer() {
   return (
     <footer className="mt-32 border-t border-neutral-200 bg-neutral-50">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-12 md:grid-cols-4">
         <div>
           <div className="text-lg font-bold tracking-tight text-neutral-900">
             {SITE.name}
           </div>
-          <p className="mt-3 max-w-sm text-sm text-neutral-600">
-            The advisory company for the creator economy.
-          </p>
+          <div className="mt-4 text-sm text-neutral-500">New York</div>
+          <a
+            href={`mailto:${SITE.email}`}
+            className="mt-1 block text-sm text-neutral-500 hover:text-neutral-900"
+          >
+            {SITE.email}
+          </a>
         </div>
-        <nav className="flex flex-wrap gap-6 text-sm text-neutral-700">
+        <nav className="flex flex-col gap-3 text-sm text-neutral-700">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
+            Site
+          </div>
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -24,15 +36,29 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        <div className="text-sm text-neutral-500">
-          <div>
-            <a href={`mailto:${SITE.email}`} className="hover:text-neutral-900">
-              {SITE.email}
-            </a>
+        <nav className="flex flex-col gap-3 text-sm text-neutral-700">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
+            Follow
           </div>
-          <div className="mt-1">New York</div>
-          <div className="mt-3 text-xs text-neutral-400">
-            Righteous Eats Foundation is a 501(c)(3). {SITE.refEin}.
+          {SOCIALS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              className="transition-colors hover:text-neutral-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {s.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex flex-col gap-3 text-sm text-neutral-500">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">
+            Legal
+          </div>
+          <div>
+            &copy; {new Date().getFullYear()} Flavor Thing. All rights
+            reserved.
           </div>
         </div>
       </div>

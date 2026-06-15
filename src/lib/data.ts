@@ -232,5 +232,15 @@ export const SITE = {
   name: "Flavor Thing",
   url: "https://flavorthing.com",
   email: "hello@flavorthing.com",
-  refEin: "EIN 33-4081108", // Righteous Eats Foundation, 501(c)(3)
 } as const;
+
+// Social placeholders per Brian 2026-06-15. Real handles to follow.
+// Note: Brian directed adding the Beehiiv newsletter link to the footer even
+// though the FT Beehiiv task was killed earlier on 2026-05-27 — the footer slot
+// is reserved so the link can drop in when a newsletter platform is chosen.
+export const SOCIALS = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/flavorthing" },
+  { label: "Instagram", href: "https://www.instagram.com/flavorthing" },
+  { label: "Twitter", href: "https://twitter.com/flavorthing" },
+  { label: "Newsletter", href: "https://flavorthing.beehiiv.com" },
+] as const;
